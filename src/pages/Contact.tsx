@@ -141,7 +141,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Founder Direct</h4>
-                      <p className="text-muted-foreground">hello@alphaframe.co.ke</p>
+                      <p className="text-muted-foreground">joelwango@outlook.com</p>
                       <p className="text-muted-foreground">audit@alphaframe.co.ke</p>
                     </div>
                   </div>
@@ -165,7 +165,7 @@ const Contact = () => {
                 
                 <div className="space-y-4">
                   <a 
-                    href="https://twitter.com/alphaframe" 
+                    href="https://twitter.com/alphaframe55" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 p-4 rounded-xl bg-background border border-border hover:border-primary/50 transition-all duration-300 group"
@@ -173,7 +173,7 @@ const Contact = () => {
                     <Twitter className="text-primary group-hover:scale-110 transition-transform" size={24} />
                     <div>
                       <h4 className="font-semibold">X / Twitter</h4>
-                      <p className="text-muted-foreground text-sm">@alphaframe</p>
+                      <p className="text-muted-foreground text-sm">@alphaframe55</p>
                     </div>
                   </a>
                   
