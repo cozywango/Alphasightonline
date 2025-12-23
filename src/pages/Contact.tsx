@@ -165,7 +165,7 @@ const Contact = () => {
                 
                 <div className="space-y-4">
                   <a 
-                    href="https://twitter.com/alphaframe55" 
+                    href="https://x.com/alphaframe55" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 p-4 rounded-xl bg-background border border-border hover:border-primary/50 transition-all duration-300 group"
