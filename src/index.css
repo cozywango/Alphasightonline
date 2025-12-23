@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AlphaSight Holdings Design System - Premium Dark Aesthetic */
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Deep Black Base with Orange & Beige Accents */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary Brand - Orange Accent */
+    --primary: 24 100% 50%;
+    --primary-foreground: 0 0% 3%;
+
+    /* Secondary Brand - Beige Accent */
+    --secondary: 37 40% 91%;
+    --secondary-foreground: 0 0% 3%;
+
+    /* Muted Variants */
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 65%;
+
+    /* Accent - Beige */
+    --accent: 37 40% 91%;
+    --accent-foreground: 0 0% 3%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 24 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(24 100% 50%), hsl(24 100% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 3%) 0%, hsl(0 0% 8%) 50%, hsl(24 100% 50% / 0.1) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 6%), hsl(0 0% 8%));
+    
+    /* Shadows */
+    --shadow-premium: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
+    --shadow-glow: 0 0 40px hsl(24 100% 50% / 0.15);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-['Space_Grotesk'] antialiased;
+    scroll-behavior: smooth;
+  }
+
+  /* Typography Scale */
+  .text-display {
+    @apply text-7xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight;
+  }
+  
+  .text-hero {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight;
+  }
+  
+  .text-section {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight;
+  }
+  
+  .text-subtitle {
+    @apply text-xl md:text-2xl font-medium leading-relaxed text-muted-foreground;
+  }
+}
