@@ -41,7 +41,7 @@ const DeepDives = () => {
                   </div>
                 </div>
 
-                <p className="text-muted-foreground leading-relaxed mb-6">We take your dense 50-page whitepaper and distill it into a high-impact LinkedIn carousel. We don't dumb it down; we visualize the genius so investors can't scroll past it.</p>
+                <p className="text-muted-foreground leading-relaxed mb-6">We take your dense 50-page whitepaper and distill it into a high-impact LinkedIn carousel, instagram posts, a proper pitch deck with visual emphasis and give insights and follow up. We don't dumb it down; we visualize the genius so investors can't scroll past it.</p>
 
                 <Link to="/contact"><Button className="bg-primary text-primary-foreground hover:bg-primary/90">See Examples</Button></Link>
               </div>

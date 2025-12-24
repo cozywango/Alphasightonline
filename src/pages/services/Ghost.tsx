@@ -35,7 +35,7 @@ const Ghost = () => {
                   </div>
                 </div>
 
-                <p className="text-muted-foreground leading-relaxed mb-6">You run a company; you don't have time to be a creator. We operate your LinkedIn presence entirely in the background. We write, design, and post as you, ensuring your authority grows while you sleep.</p>
+                <p className="text-muted-foreground leading-relaxed mb-6">You run a company; you don't have time to be a creator. We operate your Social Media presence entirely in the background. We write, design, and post as you, ensuring your authority grows while you sleep.</p>
 
                 <Link to="/contact"><Button className="bg-primary text-primary-foreground hover:bg-primary/90">Go Ghost</Button></Link>
               </div>

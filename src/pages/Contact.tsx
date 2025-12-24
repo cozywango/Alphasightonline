@@ -177,6 +177,24 @@ const Contact = () => {
                     </div>
                   </a>
                   
+                  <a
+                    href="https://www.instagram.com/alphaframeonline/?utm_source=ig_web_button_share_sheet"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-4 p-4 rounded-xl bg-background border border-border hover:border-primary/50 transition-all duration-300 group"
+                  >
+                    <span className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" aria-hidden>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10z" />
+                        <path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zM17.5 6a.9.9 0 11-1.8 0 .9.9 0 011.8 0z" />
+                      </svg>
+                    </span>
+                    <div>
+                      <h4 className="font-semibold">Instagram</h4>
+                      <p className="text-muted-foreground text-sm">@alphaframeonline</p>
+                    </div>
+                  </a>
+                  
                   <a 
                     href="https://linkedin.com/company/alphaframe" 
                     target="_blank" 

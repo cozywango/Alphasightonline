@@ -32,7 +32,7 @@ const About = () => {
                 </p>
                 <p>
                   We are not a traditional marketing agency. We are a strategic asset firm. 
-                  We use advanced Neural Engines (Gemini & Gemini-X) and elite art direction to 
+                  We use Advanced processes leveraged with AI Algorithms.... and elite art direction to 
                   translate complex engineering data into "Investor-Grade" narratives.
                 </p>
                 <p>
