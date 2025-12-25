@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Cpu, Scan, Layers, Zap, Database, Aperture, ArrowRight } from 'lucide-react';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/AnimatedSection';
 
@@ -135,9 +136,9 @@ const Protocol = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 min-w-[180px] py-2">Initiate Protocol</Button>
+                <GradientButton className="min-w-[180px]">Initiate Protocol</GradientButton>
                 <Button variant="outline" size="sm" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground py-2">See Case Studies</Button>
-              </div>
+               </div>
             </div>
           </AnimatedSection>
         </section>

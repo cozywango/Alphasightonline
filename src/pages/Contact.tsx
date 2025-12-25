@@ -142,7 +142,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold mb-1">Founder Direct</h4>
                       <p className="text-muted-foreground">joelwango@outlook.com</p>
-                      <p className="text-muted-foreground">audit@alphaframe.co.ke</p>
+                      <p className="text-muted-foreground">houseofel001@gmail.com</p>
                     </div>
                   </div>
                   

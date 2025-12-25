@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Target, Eye, Zap } from 'lucide-react';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/ProductCard';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { Link } from 'react-router-dom';
+import { GlowingEffect } from '@/components/ui/glowing-effect';
+import ShaderBackground from '@/components/ui/shader-background';
 
 const products = [
 	{
@@ -55,9 +58,13 @@ const Index = () => {
 		<div className="min-h-screen">
 			{/* Hero Section */}
 			<section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-				{/* Background Gradient */}
-				<div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background" />
-				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(24_100%_50%/0.1)_0%,_transparent_50%)]" />
+			  {/* Insert shader only for this hero area (absolute and behind content) */}
+			  {/* Shader sits at z-0 so we can layer a dimming overlay behind or above it if needed */}
+			  <ShaderBackground className="absolute inset-0 h-full w-full z-0 pointer-events-none" />
+
+				{/* Background Gradient layers moved behind the shader (negative z) */}
+				<div className="absolute inset-0 -z-10 bg-gradient-to-br from-background via-background to-background" />
+				<div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_hsl(24_100%_50%/0.1)_0%,_transparent_50%)]" />
 
 				{/* Floating Elements */}
 				<div className="absolute top-20 right-20 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-float" />
@@ -88,15 +95,15 @@ const Index = () => {
 							transition={{ delay: 0.3, duration: 0.6 }}
 							className="flex flex-col sm:flex-row gap-4 justify-center items-center"
 						>
-							<Link to="/protocol">
-								<Button
-									size="lg"
-									className="bg-primary text-primary-foreground hover:bg-primary/90 group"
-								>
-									View The Protocol
-									<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-								</Button>
-								</Link>
+							<div className="relative inline-block">
+							  <GlowingEffect disabled={false} glow className="pointer-events-none rounded-md" />
+							  <Link to="/protocol" className="relative z-10 inline-block">
+							    <GradientButton className="group">
+							      View The Protocol
+							      <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+							    </GradientButton>
+							  </Link>
+							</div>
 							<Button
 								variant="outline"
 								size="lg"

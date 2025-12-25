@@ -16,25 +16,26 @@ interface GlowingEffectProps {
   movementDuration?: number;
   borderWidth?: number;
 }
+
 const GlowingEffect = memo(
   ({
     blur = 0,
-    inactiveZone = 0.7,
+    inactiveZone = 0, // FIXED: Set to 0 to remove the center dead zone
     proximity = 0,
-    spread = 20,
-    variant = "alphaframe", // Defaulting to the brand variant
-    glow = false,
+    spread = 40, // FIXED: Increased for better visibility
+    variant = "alphaframe", // FIXED: Default to brand colors
+    glow = true, // FIXED: Default to true
     className,
     movementDuration = 2,
     borderWidth = 1,
-    disabled = true,
+    disabled = false, // FIXED: Default to false (enabled)
   }: GlowingEffectProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const lastPosition = useRef({ x: 0, y: 0 });
     const animationFrameRef = useRef<number>(0);
 
     const handleMove = useCallback(
-      (e?: MouseEvent | { x: number; y: number }) => {
+      (e?: any) => {
         if (!containerRef.current) return;
 
         if (animationFrameRef.current) {
@@ -46,8 +47,10 @@ const GlowingEffect = memo(
           if (!element) return;
 
           const { left, top, width, height } = element.getBoundingClientRect();
-          const mouseX = e?.x ?? lastPosition.current.x;
-          const mouseY = e?.y ?? lastPosition.current.y;
+
+          // Robust coordinate extraction (PointerEvent or fallback)
+          const mouseX = e?.clientX ?? e?.x ?? lastPosition.current.x;
+          const mouseY = e?.clientY ?? e?.y ?? lastPosition.current.y;
 
           if (e) {
             lastPosition.current = { x: mouseX, y: mouseY };
@@ -60,7 +63,9 @@ const GlowingEffect = memo(
           );
           const inactiveRadius = 0.5 * Math.min(width, height) * inactiveZone;
 
-          if (distanceFromCenter < inactiveRadius) {
+          // NOTE: inactiveZone is 0 by default, so this check is effectively disabled
+          // when inactiveZone=0. Keep the check for configurability.
+          if (inactiveZone > 0 && distanceFromCenter < inactiveRadius) {
             element.style.setProperty("--active", "0");
             return;
           }

@@ -56,6 +56,13 @@
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Preserve existing brand colors. Gradient helpers for CTA */
+    --gf-color-1: #FF5A00; /* Blaze Orange */
+    --gf-color-2: #FFC000; /* Industrial Gold */
+    --gf-base: #080808; /* Deep base */
+    --gf-angle: 135deg;
+    --gf-pos: 50%;
   }
 }
 
@@ -85,4 +92,65 @@
   .text-subtitle {
     @apply text-xl md:text-2xl font-medium leading-relaxed text-muted-foreground;
   }
+}
+
+/* Enable smooth, animatable custom properties where supported */
+@property --gf-pos {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 50%;
+}
+
+/* Utilities for the gradient button. Kept outside Tailwind to allow complex :before/:after effects */
+.gradient-button {
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(var(--gf-angle), var(--gf-color-1), var(--gf-color-2));
+  background-size: 200% 200%;
+  background-position: var(--gf-pos) center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  will-change: background-position, transform, box-shadow;
+  box-shadow: var(--shadow-glow, 0 8px 30px rgba(0,0,0,0.45));
+  transition: transform 260ms cubic-bezier(.2,.9,.28,1), box-shadow 260ms ease, filter 260ms ease;
+}
+
+.gradient-button:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  opacity: 0.7;
+  transform: translateX(-30%);
+  transition: transform 450ms cubic-bezier(.2,.9,.28,1), opacity 300ms ease;
+}
+
+.gradient-button:hover {
+  transform: translateY(-3px) scale(1.01);
+  --gf-pos: 100%;
+  box-shadow: 0 18px 50px rgba(255,90,0,0.08), 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.gradient-button:active {
+  transform: translateY(0) scale(0.995);
+  transition-duration: 160ms;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.gradient-button:hover:before {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+/* Variant hook that can be applied by CVA when variant="variant" */
+.gradient-button-variant {
+  background-image: linear-gradient(90deg, rgba(255,90,0,1) 0%, rgba(255,192,0,1) 100%);
+}
+
+/* Ensure text remains readable on dark background */
+.gradient-button,
+.gradient-button-variant {
+  color: #fff;
 }
