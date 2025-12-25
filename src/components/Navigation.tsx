@@ -20,7 +20,7 @@ export const Navigation = () => {
 			<div className="container mx-auto px-6">
 				<div className="flex items-center justify-between h-20">
 					{/* Logo */}
-					<div className="relative inline-block">
+					<div className="relative inline-flex items-center gap-3">
 						<GlowingEffect
 							disabled={false}
 							glow
@@ -29,8 +29,13 @@ export const Navigation = () => {
 						<Link
 							to="/"
 							style={{ transform: 'none' }}
-							className="text-2xl font-bold relative z-10 px-1 !transform-none hover:!scale-100 focus:!scale-100 active:!scale-100"
+							className="flex items-center text-2xl font-bold relative z-10 px-1 !transform-none hover:!scale-100 focus:!scale-100 active:!scale-100"
 						>
+							<img
+								src="/logo.png"
+								alt="AlphaFrame logo"
+								className="h-8 w-auto mr-3"
+							/>
 							<span className="text-primary">Alpha</span>
 							<span className="text-foreground">Frame</span>
 						</Link>
