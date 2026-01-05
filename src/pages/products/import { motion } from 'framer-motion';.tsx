@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Users, Calendar, BarChart, Settings, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/AnimatedSection';
+import { Link } from 'react-router-dom';
 
 const features = [
 	{
@@ -51,20 +52,24 @@ const Alpha = () => {
 							</p>
 
 							<div className="flex flex-col sm:flex-row gap-4 justify-center">
-								<Button
-									size="lg"
-									className="bg-primary text-primary-foreground hover:bg-primary/90"
-								>
-									Start Free Trial
-									<ArrowRight className="ml-2" size={20} />
-								</Button>
-								<Button
-									variant="outline"
-									size="lg"
-									className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-								>
-									Watch Demo
-								</Button>
+								<Link to="/contact">
+									<Button
+										size="lg"
+										className="bg-primary text-primary-foreground hover:bg-primary/90"
+									>
+										Start Free Trial
+										<ArrowRight className="ml-2" size={20} />
+									</Button>
+								</Link>
+								<Link to="/contact">
+									<Button
+										variant="outline"
+										size="lg"
+										className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+									>
+										Watch Demo
+									</Button>
+								</Link>
 							</div>
 						</AnimatedSection>
 					</div>
@@ -288,19 +293,23 @@ const Alpha = () => {
 							</p>
 
 							<div className="flex flex-col sm:flex-row gap-6 justify-center">
-								<Button
-									size="lg"
-									className="bg-primary text-primary-foreground hover:bg-primary/90"
-								>
-									Start Free 14-Day Trial
-								</Button>
-								<Button
-									variant="outline"
-									size="lg"
-									className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-								>
-									Schedule Live Demo
-								</Button>
+								<Link to="/contact">
+									<Button
+										size="lg"
+										className="bg-primary text-primary-foreground hover:bg-primary/90"
+									>
+										Start Free 14-Day Trial
+									</Button>
+								</Link>
+								<Link to="/contact">
+									<Button
+										variant="outline"
+										size="lg"
+										className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+									>
+										Schedule Live Demo
+									</Button>
+								</Link>
 							</div>
 
 							<div className="mt-8 text-sm text-muted-foreground">

@@ -1,3 +1,5 @@
+/* stylelint-disable */
+/* Use PostCSS / Tailwind directives below - editor linting for unknown at-rules is disabled for this file */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;

@@ -104,13 +104,15 @@ const Index = () => {
 							    </GradientButton>
 							  </Link>
 							</div>
-							<Button
-								variant="outline"
-								size="lg"
-								className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-							>
-								Audit Your Brand
-							</Button>
+							<Link to="/contact">
+								<Button
+									variant="outline"
+									size="lg"
+									className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+								>
+									Audit Your Brand
+								</Button>
+							</Link>
 						</motion.div>
 					</motion.div>
 				</div>

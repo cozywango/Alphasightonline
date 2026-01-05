@@ -13,6 +13,9 @@ const Contact = () => {
     company: '',
     message: ''
   });
+  const [submitting, setSubmitting] = useState(false)
+  const [successMessage, setSuccessMessage] = useState<string | null>(null)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -21,10 +24,32 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setSubmitting(true)
+    setSuccessMessage(null)
+    setErrorMessage(null)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        throw new Error(data?.error || 'Request failed')
+      }
+
+      setSuccessMessage('Thanks — your message was sent. We will respond shortly.')
+      setFormData({ name: '', email: '', company: '', message: '' })
+    } catch (err: any) {
+      console.error('Contact submit error', err)
+      setErrorMessage(err?.message || 'Unable to send message. Try again later.')
+    } finally {
+      setSubmitting(false)
+    }
   };
 
   return (
@@ -115,12 +140,24 @@ const Contact = () => {
                   />
                 </div>
                 
+                {successMessage && (
+                  <div className="mb-4 rounded-md bg-green-900/60 border border-green-700 p-3 text-sm text-green-200">
+                    {successMessage}
+                  </div>
+                )}
+                {errorMessage && (
+                  <div className="mb-4 rounded-md bg-destructive/10 border border-destructive p-3 text-sm text-destructive-foreground">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <Button 
                   type="submit" 
                   size="lg" 
+                  disabled={submitting}
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90 group"
                 >
-                  Request Narrative Audit
+                  {submitting ? 'Sending...' : 'Request Narrative Audit'}
                   <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
                 </Button>
               </form>

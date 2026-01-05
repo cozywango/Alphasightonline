@@ -15,6 +15,7 @@ import Cinematic from "./pages/services/Cinematic";
 import Decks from "./pages/services/Decks";
 import Ghost from "./pages/services/Ghost";
 import Retainer from "./pages/services/Retainer";
+import ForCreators from './pages/ForCreators';
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
+              <Route path="/for-creators" element={<ForCreators />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/protocol" element={<Protocol />} />
 
