@@ -121,14 +121,15 @@ const ForCreators = () => {
 
             <h3 className="text-section mt-6 mb-4">FAQ</h3>
             <div className="text-muted-foreground mb-6">
-              <p className="mb-3"><strong>Can I process credit card payments?</strong><br/>No. We build the frontend experience. For payments, we link your buttons to Stripe Links, PayPal, or your WhatsApp Business. We keep your site lightweight and hack-proof by removing the database risk.</p>
-              <p className="mb-3"><strong>What is the hosting cost?</strong><br/>We build on modern, low-cost infrastructure (e.g., Framer/Webflow/Vercel). Hosting usually costs you between $0 - $20/month depending on the platform you choose. We advise; you pay the provider directly.</p>
-              <p className="mb-3"><strong>Why AlphaFrame?</strong><br/>Because we usually design for Quantum Computing and Biotech firms. We bring that same level of discipline, cleanliness, and speed to your business.</p>
-              <p className="mb-3"><strong>Can you register a custom domain for me?</strong><br/>Yes — we can assist with domain registration and setup (example TLDs: .com, .net, .io, .co). Domain costs vary by availability and extension; expect roughly $20–$100 depending on the name and TLD. If you’ve purchased Tier 1 or Tier 2 we can discuss including the domain fee as part of onboarding, though domain registration can be arranged for any package and is not exclusive to those tiers.</p>
+              <p className="mb-3"><strong>Can I process credit card payments?</strong><br />No. We build the frontend experience. For payments, we link your buttons to Stripe Links, PayPal, or your WhatsApp Business. We keep your site lightweight and hack-proof by removing the database risk.</p>
+              <p className="mb-3"><strong>What is the hosting cost?</strong><br />We build on modern, low-cost infrastructure (e.g., Framer/Webflow/Vercel). Hosting usually costs you between $0 - $20/month depending on the platform you choose. We advise; you pay the provider directly.</p>
+              <p className="mb-3"><strong>Why AlphaFrame?</strong><br />Because we usually design for Quantum Computing and Biotech firms. We bring that same level of discipline, cleanliness, and speed to your business.</p>
+              <p className="mb-3"><strong>Can you register a custom domain for me?</strong><br />Yes — we can assist with domain registration and setup (example TLDs: .com, .net, .io, .co). Domain costs vary by availability and extension; expect roughly $20–$100 depending on the name and TLD. If you’ve purchased Tier 1 or Tier 2 we can discuss including the domain fee as part of onboarding, though domain registration can be arranged for any package and is not exclusive to those tiers.</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center flex justify-center gap-4">
               <Link to="/contact"><Button className="bg-primary text-primary-foreground hover:bg-primary/90">START PROJECT</Button></Link>
+              <Link to="/audit-portfolio"><Button variant="outline">Audit Portfolio</Button></Link>
             </div>
 
           </div>

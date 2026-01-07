@@ -4,7 +4,7 @@ import { AnimatedSection } from '@/components/AnimatedSection';
 
 const portfolioData = [
 	{
-		title: 'Branding',
+		title: 'Visual Authority',
 		gradient: 'linear-gradient(135deg, #e73827, #f85032)',
 		projects: [
 			{
@@ -36,8 +36,9 @@ const portfolioData = [
 			},
 			{
 				id: 'w2',
-				image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-				title: 'Echo Analytics',
+				image: '/TierFour Agency.png',
+				title: 'Tier 1 Business Website',
+				link: 'https://tierfour-agency.vercel.app/',
 			},
 		],
 	},
