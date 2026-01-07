@@ -37,8 +37,8 @@ async function handler(req, res) {
     // Vercel usually parses JSON automatically if Content-Type is application/json.
     // We add a fallback just in case.
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
-    
-    const { name, email, website, message } = body || {};
+
+    const { name, email, website, message, inquiryType } = body || {};
 
     if (!name || !email || !message) {
       console.warn('Validation Failed:', { name, email, hasMessage: !!message });
@@ -55,15 +55,18 @@ async function handler(req, res) {
     });
 
     // 6. Send Mail
+    const subjectPrefix = inquiryType === 'marketer' ? '[HUNTER APPLICATION]' : '[FOUNDER INQUIRY]';
+
     const mailOptions = {
       from: `"${name}" <${EMAIL_USER}>`, // Sender address
       to: EMAIL_USER, // List of receivers (sending to yourself)
       replyTo: email,
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `${subjectPrefix} from ${name}`,
       text: `
         Name: ${name}
         Email: ${email}
         Website: ${website || 'Not provided'}
+        Type: ${inquiryType === 'marketer' ? 'Hunter Application' : 'Founder Inquiry'}
         
         Message:
         ${message}

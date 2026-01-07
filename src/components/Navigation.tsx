@@ -11,6 +11,7 @@ export const Navigation = () => {
 	const navItems = [
 		{ href: '/', label: 'Overview' },
 		{ href: '/protocol', label: 'The Protocol' },
+		{ href: '/hunter-program', label: 'The Hunter Program' },
 		{ href: '/for-creators', label: 'For Creators' },
 		{ href: '/about', label: 'About' },
 		{ href: '/contact', label: 'Contact' },

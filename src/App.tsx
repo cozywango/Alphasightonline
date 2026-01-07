@@ -17,6 +17,7 @@ import Ghost from "./pages/services/Ghost";
 import Retainer from "./pages/services/Retainer";
 import ForCreators from './pages/ForCreators';
 import AuditPortfolio from './app/audit-portfolio/page';
+import HunterProgram from './pages/HunterProgram';
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/protocol" element={<Protocol />} />
               <Route path="/audit-portfolio" element={<AuditPortfolio />} />
+              <Route path="/hunter-program" element={<HunterProgram />} />
 
               {/* services routes */}
               <Route path="/services/audit" element={<Audit />} />
