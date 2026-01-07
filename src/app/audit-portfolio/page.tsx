@@ -46,6 +46,12 @@ const portfolioData = [
 				title: 'Tier 4 Creator Website',
 				link: 'https://niatier4creator.vercel.app/',
 			},
+			{
+				id: 'w4',
+				image: '/zuritier2.png',
+				title: 'Tier 2 Creator Website',
+				link: 'https://zuritier2.vercel.app/',
+			},
 		],
 	},
 ];
