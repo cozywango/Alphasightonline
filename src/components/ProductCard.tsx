@@ -9,9 +9,10 @@ interface ProductCardProps {
   description: string;
   href: string;
   index: number;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
-export const ProductCard: FC<ProductCardProps> = ({ name, description, href, index }) => {
+export const ProductCard: FC<ProductCardProps> = ({ name, description, href, index, onClick }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
@@ -20,7 +21,7 @@ export const ProductCard: FC<ProductCardProps> = ({ name, description, href, ind
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group"
     >
-      <Link to={href}>
+      <Link to={href} onClick={onClick}>
         <div className="relative">
           <GlowingEffect disabled={false} glow className="pointer-events-none rounded-2xl" />
           <div className="bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-[0_0_30px_hsl(24_0%_50%/0.06)] relative overflow-hidden !transform-none" style={{ transform: 'none' }}>
@@ -30,17 +31,17 @@ export const ProductCard: FC<ProductCardProps> = ({ name, description, href, ind
                 <h3 className="text-2xl font-bold transition-colors duration-300 !transform-none" style={{ transform: 'none' }}>
                   {name}
                 </h3>
-                <ArrowUpRight 
-                  className="text-muted-foreground transition-all duration-300 !transform-none" 
-                  size={24} 
+                <ArrowUpRight
+                  className="text-muted-foreground transition-all duration-300 !transform-none"
+                  size={24}
                   style={{ transform: 'none' }}
                 />
               </div>
-              
+
               <p className="text-muted-foreground leading-relaxed">
                 {description}
               </p>
-              
+
               {/* Bottom accent line */}
               <div className="mt-8 h-px bg-gradient-to-r from-primary/30 via-primary/20 to-transparent transition-opacity duration-500" />
             </div>

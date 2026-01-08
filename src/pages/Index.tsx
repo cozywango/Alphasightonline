@@ -4,7 +4,7 @@ import { GradientButton } from '@/components/ui/gradient-button';
 import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/ProductCard';
 import { AnimatedSection } from '@/components/AnimatedSection';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 import ShaderBackground from '@/components/ui/shader-background';
 
@@ -53,7 +53,20 @@ const stats = [
 	{ value: '100%', label: 'Faceless Execution' },
 ];
 
+import { useAuth } from '@/contexts/AuthContext';
+
 const Index = () => {
+	const { user } = useAuth();
+	const navigate = useNavigate();
+	const username = user?.user_metadata?.username;
+
+	const handleAuthCheck = (e: React.MouseEvent) => {
+		if (!user) {
+			e.preventDefault();
+			navigate('/auth');
+		}
+	};
+
 	return (
 		<div className="min-h-screen">
 			{/* Hero Section */}
@@ -80,6 +93,17 @@ const Index = () => {
 						transition={{ duration: 0.8 }}
 						className="max-w-4xl mx-auto"
 					>
+						{username ? (
+							<motion.div
+								initial={{ opacity: 0, y: -20 }}
+								animate={{ opacity: 1, y: 0 }}
+								className="mb-4"
+							>
+								<span className="text-xl md:text-2xl font-medium text-primary">
+									Welcome {username}
+								</span>
+							</motion.div>
+						) : null}
 						<h1 className="text-hero mb-8">
 							Sellability is a{' '}
 							<span className="text-primary">Technical Signal</span>
@@ -97,14 +121,14 @@ const Index = () => {
 						>
 							<div className="relative inline-block">
 								<GlowingEffect disabled={false} glow className="pointer-events-none rounded-md" />
-								<Link to="/protocol" className="relative z-10 inline-block">
+								<Link to="/protocol" className="relative z-10 inline-block" onClick={handleAuthCheck}>
 									<GradientButton className="group">
 										View The Protocol
 										<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
 									</GradientButton>
 								</Link>
 							</div>
-							<Link to="/audit-portfolio">
+							<Link to="/audit-portfolio" onClick={handleAuthCheck}>
 								<Button
 									variant="outline"
 									size="lg"
@@ -162,6 +186,7 @@ const Index = () => {
 								description={product.description}
 								href={product.href}
 								index={index}
+								onClick={handleAuthCheck}
 							/>
 						))}
 					</div>
@@ -245,7 +270,7 @@ const Index = () => {
 							</p>
 
 							<div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-								<Link to="/contact">
+								<Link to="/contact" onClick={handleAuthCheck}>
 									<Button
 										size="lg"
 										className="bg-primary text-primary-foreground hover:bg-primary/90 animate-glow-pulse"
@@ -253,7 +278,7 @@ const Index = () => {
 										Apply for Protocol
 									</Button>
 								</Link>
-								<Link to="/audit-portfolio">
+								<Link to="/audit-portfolio" onClick={handleAuthCheck}>
 									<Button
 										variant="outline"
 										size="lg"
@@ -262,7 +287,7 @@ const Index = () => {
 										See Case Studies
 									</Button>
 								</Link>
-								<Link to="/contact">
+								<Link to="/contact" onClick={handleAuthCheck}>
 									<Button
 										variant="ghost"
 										size="lg"

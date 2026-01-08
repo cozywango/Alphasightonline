@@ -75,7 +75,7 @@ const ProductInquiryModal = ({ productName, isOpen, onOpenChange }: ProductInqui
         <Dialog open={isOpen} onOpenChange={onOpenChange}>
             <DialogContent className="sm:max-w-[500px] border-primary/20 bg-background/95 backdrop-blur-xl">
                 <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold">Inquire about {productName}</DialogTitle>
+                    <DialogTitle className="text-2xl font-bold">Interested in {productName}</DialogTitle>
                     <DialogDescription>
                         Complete the form below to initiate your build. We'll review your requirements and schedule a briefing.
                     </DialogDescription>

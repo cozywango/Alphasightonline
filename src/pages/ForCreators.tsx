@@ -64,7 +64,7 @@ const ForCreators = () => {
                 <p className="text-muted-foreground mb-6">Single long-scroll page • Bio & social links • 1 featured image/video • Contact button • No hosting included</p>
                 <div className="flex items-center gap-4 mt-auto">
                   <div onClick={() => handleApply('Creator Tier 1 — Bio-Link')}>
-                    <GlowButton>Apply</GlowButton>
+                    <GlowButton>Interested</GlowButton>
                   </div>
                   <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">See Examples</Link>
                 </div>
@@ -75,7 +75,7 @@ const ForCreators = () => {
                 <p className="text-muted-foreground mb-6">Home + About + Work pages • 10-item gallery grid • Downloadable CV/kit • Mobile optimized • No hosting included</p>
                 <div className="flex items-center gap-4 mt-auto">
                   <div onClick={() => handleApply('Creator Tier 2 — Portfolio')}>
-                    <GlowButton>Apply</GlowButton>
+                    <GlowButton>Interested</GlowButton>
                   </div>
                   <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">See Examples</Link>
                 </div>
@@ -86,7 +86,7 @@ const ForCreators = () => {
                 <p className="text-muted-foreground mb-6">Home + Blog/Newsletter pages • Dynamic content feed • Email capture form • Hosting included • Mobile & desktop optimization</p>
                 <div className="flex items-center gap-4 mt-auto">
                   <div onClick={() => handleApply('Creator Tier 3 — Content Hub')}>
-                    <GlowButton>Apply</GlowButton>
+                    <GlowButton>Interested</GlowButton>
                   </div>
                   <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">See Examples</Link>
                 </div>
@@ -97,7 +97,7 @@ const ForCreators = () => {
                 <p className="text-muted-foreground mb-6">Full personal site (5 pages) • Motion effects (parallax) • Press/media kit section • Custom domain setup • Hosting included • Mobile & desktop optimization</p>
                 <div className="flex items-center gap-4 mt-auto">
                   <div onClick={() => handleApply('Creator Tier 4 — Icon')}>
-                    <GlowButton>Apply</GlowButton>
+                    <GlowButton>Interested</GlowButton>
                   </div>
                   <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">See Examples</Link>
                 </div>
@@ -112,7 +112,7 @@ const ForCreators = () => {
                 <p className="text-muted-foreground mb-6">Single landing page • Business info & map • “WhatsApp Us” button • Hero image • No hosting included</p>
                 <div className="flex items-center gap-4 mt-auto">
                   <div onClick={() => handleApply('Business Tier 1 — The Card')}>
-                    <GlowButton>Apply</GlowButton>
+                    <GlowButton>Interested</GlowButton>
                   </div>
                   <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">See Examples</Link>
                 </div>
@@ -123,7 +123,7 @@ const ForCreators = () => {
                 <p className="text-muted-foreground mb-6">Product gallery (up to 20 items) • Categorized layouts • Product detail pop-ups • Direct-to-DM buttons • No hosting included</p>
                 <div className="flex items-center gap-4 mt-auto">
                   <div onClick={() => handleApply('Business Tier 2 — The Catalog')}>
-                    <GlowButton>Apply</GlowButton>
+                    <GlowButton>Interested</GlowButton>
                   </div>
                   <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">See Examples</Link>
                 </div>
@@ -134,7 +134,7 @@ const ForCreators = () => {
                 <p className="text-muted-foreground mb-6">Service menu / price list • Team bios section • Client testimonials • Booking link integration • Hosting included • Mobile & desktop optimization</p>
                 <div className="flex items-center gap-4 mt-auto">
                   <div onClick={() => handleApply('Business Tier 3 — The Firm')}>
-                    <GlowButton>Apply</GlowButton>
+                    <GlowButton>Interested</GlowButton>
                   </div>
                   <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">See Examples</Link>
                 </div>
@@ -145,7 +145,7 @@ const ForCreators = () => {
                 <p className="text-muted-foreground mb-6">Multi-page architecture • High-end motion graphics • Case studies section • Competitor analysis audit • Hosting included • Mobile & desktop optimization</p>
                 <div className="flex items-center gap-4 mt-auto">
                   <div onClick={() => handleApply('Business Tier 4 — Enterprise Lite')}>
-                    <GlowButton>Apply</GlowButton>
+                    <GlowButton>Interested</GlowButton>
                   </div>
                   <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">See Examples</Link>
                 </div>

@@ -1,11 +1,13 @@
 import { useState } from 'react';
+import { useAuth } from '@/contexts/AuthContext';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, User } from 'lucide-react';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 
 export const Navigation = () => {
+	const { user } = useAuth();
 	const [isOpen, setIsOpen] = useState(false);
 
 	const navItems = [
@@ -66,8 +68,22 @@ export const Navigation = () => {
 							</div>
 						))}
 						<Link to="/audit-portfolio">
-							<GradientButton className="w-fit">Audit Portfolio</GradientButton>
+							<GradientButton size="sm" className="w-fit">Audit Portfolio</GradientButton>
 						</Link>
+						{!user ? (
+							<div className="flex items-center gap-4">
+								<Link to="/auth?mode=signin">
+									<GradientButton size="sm" className="w-fit">Sign In</GradientButton>
+								</Link>
+								<Link to="/auth">
+									<GradientButton size="sm" className="w-fit">Sign Up</GradientButton>
+								</Link>
+							</div>
+						) : (
+							<Link to="/profile" className="p-2 rounded-full hover:bg-accent transition-colors">
+								<User className="w-6 h-6 text-foreground" />
+							</Link>
+						)}
 					</div>
 
 					{/* Mobile Menu Toggle */}
@@ -110,8 +126,22 @@ export const Navigation = () => {
 								</div>
 							))}
 							<Link to="/audit-portfolio">
-								<GradientButton className="w-fit">Audit Portfolio</GradientButton>
+								<GradientButton size="sm" className="w-fit">Audit Portfolio</GradientButton>
 							</Link>
+							{!user ? (
+								<div className="flex flex-col gap-4">
+									<Link to="/auth?mode=signin" onClick={() => setIsOpen(false)}>
+										<GradientButton size="sm" className="w-fit">Sign In</GradientButton>
+									</Link>
+									<Link to="/auth" onClick={() => setIsOpen(false)}>
+										<GradientButton size="sm" className="w-fit">Sign Up</GradientButton>
+									</Link>
+								</div>
+							) : (
+								<Link to="/profile" onClick={() => setIsOpen(false)} className="flex items-center gap-2 text-foreground font-medium p-2">
+									<User className="w-5 h-5" /> Profile
+								</Link>
+							)}
 						</div>
 					</motion.div>
 				)}
