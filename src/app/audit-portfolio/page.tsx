@@ -58,6 +58,12 @@ const portfolioData = [
 				title: 'Tier 1 Business Website',
 				link: 'https://tierfour-agency.vercel.app/',
 			},
+			{
+				id: 'w6',
+				image: '/businesstier2.png',
+				title: 'Tier 2 Business Website',
+				link: 'https://azuretier2.vercel.app/',
+			},
 		],
 	},
 ];
