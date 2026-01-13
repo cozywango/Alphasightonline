@@ -70,6 +70,12 @@ const portfolioData = [
 				title: 'Tier 3 Business Website',
 				link: 'https://stratumtier3.vercel.app/',
 			},
+			{
+				id: 'w8',
+				image: '/businesstier4.png',
+				title: 'Tier 4 Business Website',
+				link: 'https://vantagepoint-theta.vercel.app/',
+			},
 		],
 	},
 ];
