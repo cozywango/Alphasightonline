@@ -34,157 +34,326 @@ const ForCreators = () => {
 
       <div className="container mx-auto px-6">
         <AnimatedSection>
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h1 className="text-hero mb-4">
               Don’t Just Post. <span className="text-primary">Publish.</span>
             </h1>
-            <p className="text-subtitle max-w-3xl mx-auto">
-              We bring Deep-Tech precision to personal branding. High-performance, "Catalog-Mode" websites for creators and businesses who demand Visual Authority.
+            <p className="text-subtitle max-w-3xl mx-auto mb-6">
+              AlphaFrame builds high-performance, Catalog-Mode websites for creators and businesses who want lasting visual authority.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              We bring deep-tech design discipline to personal brands and commercial catalogs.
             </p>
           </div>
         </AnimatedSection>
 
+        {/* What We Believe */}
         <AnimatedSection>
-          <div className="bg-card/30 backdrop-blur rounded-2xl border-[0.5px] border-border p-8">
-            <h2 className="text-section mb-4">The Philosophy</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Social media is rented land. The algorithm changes, and you disappear. AlphaFrame Websites builds your permanent digital asset. We do not build "cookie-cutter" sites. We deploy Visual Authority—the same psychological design principles we use for deep-tech venture capital—adapted for your personal brand or business catalog.
-            </p>
-
-            <h3 className="text-lg font-semibold mt-6">Our Promise:</h3>
-            <ul className="list-disc list-inside text-muted-foreground mb-6">
-              <li>Speed: Deployed in days, not months.</li>
-              <li>Polish: "Fortune-500" grade aesthetics.</li>
-              <li>Simplicity: No complex backends. No crashing plugins. Just pure, high-fidelity frontend code.</li>
-            </ul>
-
-            <h3 className="text-section mt-6 mb-4">The "Catalog-Mode" Standard</h3>
-            <p className="text-muted-foreground mb-4">We do not build shopping carts. We build Showcases. You handle the sales (via WhatsApp, DM, or external links); we handle the desire.</p>
-            <ul className="list-disc list-inside text-muted-foreground mb-6">
-              <li>Zero Transaction Fees: We don’t touch your money.</li>
-              <li>Visual-First: Designed to display your products or portfolio like a high-end gallery.</li>
-              <li>Mobile-Native: Engineered for the "Link-in-Bio" generation.</li>
-            </ul>
-
-            <h3 className="text-section mt-6 mb-4">Pricing: Creator Series</h3>
-            <p className="text-muted-foreground mb-4">If you are a personality, influencer, or artist monetizing your personal brand, the Creator Series is engineered to turn your audience into a community.</p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="p-6 bg-background/10 rounded-lg border border-border relative overflow-hidden group hover:border-primary/30 transition-colors">
-                <h4 className="font-bold mb-2">Tier 1 — Bio‑Link ($80‑150)</h4>
-                <p className="text-muted-foreground mb-6">Single long-scroll page • Bio & social links • 1 featured image/video • Contact button • No hosting included</p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div onClick={() => handleApply('Creator Tier 1 — Bio-Link')}>
-                    <GlowButton>Interested</GlowButton>
-                  </div>
-                  <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors" onClick={handleAuthCheck}>See Examples</Link>
-                </div>
-              </div>
-
-              <div className="p-6 bg-background/10 rounded-lg border border-border relative overflow-hidden group hover:border-primary/30 transition-colors">
-                <h4 className="font-bold mb-2">Tier 2 — Portfolio ($170‑270)</h4>
-                <p className="text-muted-foreground mb-6">Home + About + Work pages • 10-item gallery grid • Downloadable CV/kit • Mobile optimized • No hosting included</p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div onClick={() => handleApply('Creator Tier 2 — Portfolio')}>
-                    <GlowButton>Interested</GlowButton>
-                  </div>
-                  <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors" onClick={handleAuthCheck}>See Examples</Link>
-                </div>
-              </div>
-
-              <div className="p-6 bg-background/10 rounded-lg border border-border relative overflow-hidden group hover:border-primary/30 transition-colors">
-                <h4 className="font-bold mb-2">Tier 3 — Content Hub ($290‑390)</h4>
-                <p className="text-muted-foreground mb-6">Home + Blog/Newsletter pages • Dynamic content feed • Email capture form • Hosting included • Mobile & desktop optimization</p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div onClick={() => handleApply('Creator Tier 3 — Content Hub')}>
-                    <GlowButton>Interested</GlowButton>
-                  </div>
-                  <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors" onClick={handleAuthCheck}>See Examples</Link>
-                </div>
-              </div>
-
-              <div className="p-6 bg-background/10 rounded-lg border border-border relative overflow-hidden group hover:border-primary/30 transition-colors">
-                <h4 className="font-bold mb-2">Tier 4 — Icon ($400+)</h4>
-                <p className="text-muted-foreground mb-6">Full personal site (5 pages) • Motion effects (parallax) • Press/media kit section • Custom domain setup • Hosting included • Mobile & desktop optimization</p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div onClick={() => handleApply('Creator Tier 4 — Icon')}>
-                    <GlowButton>Interested</GlowButton>
-                  </div>
-                  <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors" onClick={handleAuthCheck}>See Examples</Link>
-                </div>
-              </div>
+          <div className="bg-card/30 backdrop-blur rounded-3xl border-[0.5px] border-border p-10 mb-16">
+            <h2 className="text-section mb-6">What We Believe</h2>
+            <div className="text-lg text-muted-foreground leading-relaxed space-y-4 mb-8">
+              <p>Social platforms do not belong to you.<br />Algorithms change. Reach disappears.</p>
+              <p className="text-primary font-medium text-xl">A website is permanent.</p>
+              <p>AlphaFrame builds owned digital assets designed to outlast platforms and trends.</p>
+              <p>We do not use generic templates. We apply the same visual psychology used in venture-backed deep-tech companies, adapted for creators and businesses.</p>
             </div>
 
-            <h3 className="text-section mt-12 mb-4">Pricing: Business Series</h3>
-            <p className="text-muted-foreground mb-4">If you are an entity, agency, or retailer selling products or services, the Business Series is architected to turn your traffic into customers.</p>
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="p-6 bg-background/10 rounded-lg border border-border relative overflow-hidden group hover:border-primary/30 transition-colors">
-                <h4 className="font-bold mb-2">Tier 1 — The Card ($120‑220)</h4>
-                <p className="text-muted-foreground mb-6">Single landing page • Business info & map • “WhatsApp Us” button • Hero image • No hosting included</p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div onClick={() => handleApply('Business Tier 1 — The Card')}>
-                    <GlowButton>Interested</GlowButton>
-                  </div>
-                  <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors" onClick={handleAuthCheck}>See Examples</Link>
-                </div>
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              <div className="bg-background/20 p-6 rounded-xl border border-border/50">
+                <h3 className="font-bold text-lg mb-2 text-foreground">Speed</h3>
+                <p className="text-sm text-muted-foreground">Sites delivered in days, not months.</p>
               </div>
-
-              <div className="p-6 bg-background/10 rounded-lg border border-border relative overflow-hidden group hover:border-primary/30 transition-colors">
-                <h4 className="font-bold mb-2">Tier 2 — The Catalog ($250‑350)</h4>
-                <p className="text-muted-foreground mb-6">Product gallery (up to 20 items) • Categorized layouts • Product detail pop-ups • Direct-to-DM buttons • No hosting included</p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div onClick={() => handleApply('Business Tier 2 — The Catalog')}>
-                    <GlowButton>Interested</GlowButton>
-                  </div>
-                  <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors" onClick={handleAuthCheck}>See Examples</Link>
-                </div>
+              <div className="bg-background/20 p-6 rounded-xl border border-border/50">
+                <h3 className="font-bold text-lg mb-2 text-foreground">Polish</h3>
+                <p className="text-sm text-muted-foreground">Enterprise-grade design built to signal credibility.</p>
               </div>
-
-              <div className="p-6 bg-background/10 rounded-lg border border-border relative overflow-hidden group hover:border-primary/30 transition-colors">
-                <h4 className="font-bold mb-2">Tier 3 — The Firm ($380‑480)</h4>
-                <p className="text-muted-foreground mb-6">Service menu / price list • Team bios section • Client testimonials • Booking link integration • Hosting included • Mobile & desktop optimization</p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div onClick={() => handleApply('Business Tier 3 — The Firm')}>
-                    <GlowButton>Interested</GlowButton>
-                  </div>
-                  <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors" onClick={handleAuthCheck}>See Examples</Link>
-                </div>
-              </div>
-
-              <div className="p-6 bg-background/10 rounded-lg border border-border relative overflow-hidden group hover:border-primary/30 transition-colors">
-                <h4 className="font-bold mb-2">Tier 4 — Enterprise Lite ($800+)</h4>
-                <p className="text-muted-foreground mb-6">Multi-page architecture • High-end motion graphics • Case studies section • Competitor analysis audit • Hosting included • Mobile & desktop optimization</p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div onClick={() => handleApply('Business Tier 4 — Enterprise Lite')}>
-                    <GlowButton>Interested</GlowButton>
-                  </div>
-                  <Link to="/audit-portfolio" className="text-sm text-muted-foreground hover:text-primary transition-colors">See Examples</Link>
-                </div>
+              <div className="bg-background/20 p-6 rounded-xl border border-border/50">
+                <h3 className="font-bold text-lg mb-2 text-foreground">Simplicity</h3>
+                <p className="text-sm text-muted-foreground">Frontend-only architecture. No plugins. No fragile systems.</p>
               </div>
             </div>
-
-            <h3 className="text-section mt-6 mb-4">The AlphaFrame Process</h3>
-            <ol className="list-decimal list-inside text-muted-foreground mb-6">
-              <li>The Brief: You fill out our structured visual questionnaire.</li>
-              <li>The Build: We construct your site using our proprietary "Visual Authority" templates.</li>
-              <li>The Review: You get one round of "Redline" revisions.</li>
-              <li>The Handover: We transfer the keys. You own it 100%.</li>
-            </ol>
-
-            <h3 className="text-section mt-6 mb-4">FAQ</h3>
-            <div className="text-muted-foreground mb-6">
-              <p className="mb-3"><strong>Can I process credit card payments?</strong><br />No. We build the frontend experience. For payments, we link your buttons to Stripe Links, PayPal, or your WhatsApp Business. We keep your site lightweight and hack-proof by removing the database risk.</p>
-              <p className="mb-3"><strong>What is the hosting cost?</strong><br />We build on modern, low-cost infrastructure (e.g., Framer/Webflow/Vercel). Hosting usually costs you between $0 - $20/month depending on the platform you choose. We advise; you pay the provider directly.</p>
-              <p className="mb-3"><strong>Why AlphaFrame?</strong><br />Because we usually design for Quantum Computing and Biotech firms. We bring that same level of discipline, cleanliness, and speed to your business.</p>
-              <p className="mb-3"><strong>Can you register a custom domain for me?</strong><br />Yes — we can assist with domain registration and setup (example TLDs: .com, .net, .io, .co). Domain costs vary by availability and extension; expect roughly $20–$100 depending on the name and TLD. If you’ve purchased Tier 1 or Tier 2 we can discuss including the domain fee as part of onboarding, though domain registration can be arranged for any package and is not exclusive to those tiers.</p>
-            </div>
-
-            <div className="text-center flex justify-center gap-4">
-              <Link to="/contact" onClick={handleAuthCheck}><Button className="bg-primary text-primary-foreground hover:bg-primary/90">START PROJECT</Button></Link>
-              <Link to="/audit-portfolio" onClick={handleAuthCheck}><Button variant="outline">Audit Portfolio</Button></Link>
-            </div>
-
           </div>
         </AnimatedSection>
+
+        {/* Catalog Mode Standard */}
+        <AnimatedSection>
+          <div className="mb-24 text-center max-w-4xl mx-auto">
+            <h2 className="text-section mb-6">The Catalog-Mode Standard</h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              We do not build shopping carts. <span className="text-primary font-medium">We build showcases.</span>
+            </p>
+            <p className="text-muted-foreground mb-12">
+              Your site creates desire. You close sales through WhatsApp, direct messages, or external payment links.
+              This keeps everything fast, reliable, and maintenance-free.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6 text-left">
+              <div className="p-6 rounded-2xl bg-card border border-border">
+                <h4 className="font-bold text-primary mb-2">Zero transaction fees</h4>
+                <p className="text-sm text-muted-foreground">We never touch your revenue.</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-card border border-border">
+                <h4 className="font-bold text-primary mb-2">Visual-first</h4>
+                <p className="text-sm text-muted-foreground">Your work appears like a curated gallery, not a storefront.</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-card border border-border">
+                <h4 className="font-bold text-primary mb-2">Mobile-native</h4>
+                <p className="text-sm text-muted-foreground">Designed for link-in-bio traffic and small screens first.</p>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Creator Series Pricing */}
+        <AnimatedSection>
+          <div className="mb-24">
+            <div className="text-center mb-10">
+              <h2 className="text-section mb-4">Creator Series</h2>
+              <p className="text-muted-foreground">Built for creators, influencers, artists, and personal brands.</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Tier 1 */}
+              <div className="p-8 bg-card/20 rounded-2xl border border-border hover:border-primary/30 transition-all group">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold">Tier One. Bio-Link</h3>
+                    <p className="text-sm text-muted-foreground">Single long-scroll page</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="block text-xl font-bold text-primary">$80 - $150</span>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-8">
+                  <li>• Bio and social links</li>
+                  <li>• One featured image or video</li>
+                  <li>• Contact button</li>
+                  <li className="opacity-70 italic">• Hosting not included</li>
+                </ul>
+                <div onClick={() => handleApply('Creator Tier 1')}>
+                  <GlowButton className="w-full">Interested</GlowButton>
+                </div>
+              </div>
+
+              {/* Tier 2 */}
+              <div className="p-8 bg-card/20 rounded-2xl border border-border hover:border-primary/30 transition-all group">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold">Tier Two. Portfolio</h3>
+                    <p className="text-sm text-muted-foreground">Home, About, and Work pages</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="block text-xl font-bold text-primary">$170 - $270</span>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-8">
+                  <li>• Ten-item gallery</li>
+                  <li>• Downloadable CV or media kit</li>
+                  <li>• Mobile optimized</li>
+                  <li className="opacity-70 italic">• Hosting not included</li>
+                </ul>
+                <div onClick={() => handleApply('Creator Tier 2')}>
+                  <GlowButton className="w-full">Interested</GlowButton>
+                </div>
+              </div>
+
+              {/* Tier 3 */}
+              <div className="p-8 bg-card/20 rounded-2xl border border-border hover:border-primary/30 transition-all group">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold">Tier Three. Content Hub</h3>
+                    <p className="text-sm text-muted-foreground">Home plus blog or newsletter</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="block text-xl font-bold text-primary">$290 - $390</span>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-8">
+                  <li>• Dynamic content feed</li>
+                  <li>• Email capture</li>
+                  <li>• Mobile and desktop optimized</li>
+                  <li className="text-primary/70 font-medium">• Hosting included</li>
+                </ul>
+                <div onClick={() => handleApply('Creator Tier 3')}>
+                  <GlowButton className="w-full">Interested</GlowButton>
+                </div>
+              </div>
+
+              {/* Tier 4 */}
+              <div className="p-8 bg-card/20 rounded-2xl border border-border hover:border-primary/30 transition-all group">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold">Tier Four. Icon</h3>
+                    <p className="text-sm text-muted-foreground">Five-page personal site</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="block text-xl font-bold text-primary">$400+</span>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-8">
+                  <li>• Motion effects</li>
+                  <li>• Press and media section</li>
+                  <li>• Custom domain setup</li>
+                  <li className="text-primary/70 font-medium">• Hosting included</li>
+                </ul>
+                <div onClick={() => handleApply('Creator Tier 4')}>
+                  <GlowButton className="w-full">Interested</GlowButton>
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Business Series Pricing */}
+        <AnimatedSection>
+          <div className="mb-24">
+            <div className="text-center mb-10">
+              <h2 className="text-section mb-4">Business Series</h2>
+              <p className="text-muted-foreground">Built for agencies, retailers, and service-based companies.</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Tier 1 */}
+              <div className="p-8 bg-card/20 rounded-2xl border border-border hover:border-primary/30 transition-all group">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold">Tier One. The Card</h3>
+                    <p className="text-sm text-muted-foreground">Single landing page</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="block text-xl font-bold text-primary">$120 - $220</span>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-8">
+                  <li>• Business details and map</li>
+                  <li>• WhatsApp contact button</li>
+                  <li>• Hero image</li>
+                  <li className="opacity-70 italic">• Hosting not included</li>
+                </ul>
+                <div onClick={() => handleApply('Business Tier 1')}>
+                  <GlowButton className="w-full">Interested</GlowButton>
+                </div>
+              </div>
+
+              {/* Tier 2 */}
+              <div className="p-8 bg-card/20 rounded-2xl border border-border hover:border-primary/30 transition-all group">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold">Tier Two. The Catalog</h3>
+                    <p className="text-sm text-muted-foreground">Product gallery up to twenty items</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="block text-xl font-bold text-primary">$250 - $350</span>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-8">
+                  <li>• Categorized layouts</li>
+                  <li>• Product detail pop-ups</li>
+                  <li>• Direct-to-message buttons</li>
+                  <li className="opacity-70 italic">• Hosting not included</li>
+                </ul>
+                <div onClick={() => handleApply('Business Tier 2')}>
+                  <GlowButton className="w-full">Interested</GlowButton>
+                </div>
+              </div>
+
+              {/* Tier 3 */}
+              <div className="p-8 bg-card/20 rounded-2xl border border-border hover:border-primary/30 transition-all group">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold">Tier Three. The Firm</h3>
+                    <p className="text-sm text-muted-foreground">Service menus and pricing</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="block text-xl font-bold text-primary">$380 - $480</span>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-8">
+                  <li>• Team profiles & Client testimonials</li>
+                  <li>• Booking link integration</li>
+                  <li>• Mobile and desktop optimized</li>
+                  <li className="text-primary/70 font-medium">• Hosting included</li>
+                </ul>
+                <div onClick={() => handleApply('Business Tier 3')}>
+                  <GlowButton className="w-full">Interested</GlowButton>
+                </div>
+              </div>
+
+              {/* Tier 4 */}
+              <div className="p-8 bg-card/20 rounded-2xl border border-border hover:border-primary/30 transition-all group">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold">Tier Four. Enterprise Lite</h3>
+                    <p className="text-sm text-muted-foreground">Multi-page structure</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="block text-xl font-bold text-primary">$800+</span>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-8">
+                  <li>• Advanced motion visuals</li>
+                  <li>• Case studies</li>
+                  <li>• Competitor visual audit</li>
+                  <li className="text-primary/70 font-medium">• Hosting included</li>
+                </ul>
+                <div onClick={() => handleApply('Business Tier 4')}>
+                  <GlowButton className="w-full">Interested</GlowButton>
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Process */}
+        <AnimatedSection>
+          <div className="mb-24 max-w-4xl mx-auto">
+            <h2 className="text-section text-center mb-12">How the AlphaFrame Process Works</h2>
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="bg-card/40 p-6 rounded-xl border border-border">
+                <div className="text-primary font-bold mb-2">01. Brief</div>
+                <p className="text-sm text-muted-foreground">You complete a structured visual questionnaire.</p>
+              </div>
+              <div className="bg-card/40 p-6 rounded-xl border border-border">
+                <div className="text-primary font-bold mb-2">02. Build</div>
+                <p className="text-sm text-muted-foreground">We construct your site using AlphaFrame visual systems.</p>
+              </div>
+              <div className="bg-card/40 p-6 rounded-xl border border-border">
+                <div className="text-primary font-bold mb-2">03. Review</div>
+                <p className="text-sm text-muted-foreground">One round of focused revisions.</p>
+              </div>
+              <div className="bg-card/40 p-6 rounded-xl border border-border">
+                <div className="text-primary font-bold mb-2">04. Handover</div>
+                <p className="text-sm text-muted-foreground">Full ownership transfers to you.</p>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* FAQ */}
+        <AnimatedSection>
+          <div className="max-w-3xl mx-auto mb-24">
+            <h2 className="text-section text-center mb-12">FAQ</h2>
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-bold text-lg mb-2">Payments</h3>
+                <p className="text-muted-foreground">We do not process payments. Buttons link to Stripe links, PayPal, WhatsApp Business, or direct messages. This keeps your site lightweight and secure.</p>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg mb-2">Hosting</h3>
+                <p className="text-muted-foreground">We build on modern platforms such as Framer, Webflow, or Vercel. Hosting usually costs between zero and twenty dollars per month, paid directly to the provider.</p>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg mb-2">Why AlphaFrame</h3>
+                <p className="text-muted-foreground">We design for quantum computing and biotech companies under investor scrutiny. We apply the same clarity, precision, and speed to creators and businesses.</p>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg mb-2">Custom Domains</h3>
+                <p className="text-muted-foreground">We assist with domain registration and setup. Typical cost ranges from twenty to one hundred dollars depending on availability and extension. Domain setup can be included during onboarding for any tier.</p>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
       </div>
     </div>
   )

@@ -10,47 +10,29 @@ import ShaderBackground from '@/components/ui/shader-background';
 
 const products = [
 	{
-		name: 'The Narrative Audit',
-		description:
-			'A strategic breakdown of your competitors\' visual gaps and your brand\'s missed opportunities.',
-		href: '/services/audit',
-	},
-	{
-		name: 'Visual Deep-Dives',
-		description:
-			'High-fidelity, 10-slide carousels that translate dense technical whitepapers into investor-ready narratives.',
-		href: '/services/deep-dives',
-	},
-	{
-		name: 'Cinematic Loops',
-		description:
-			'4K, high-end, carefully curated loops that showcase hardware concepts with luxury aesthetics.',
-		href: '/services/cinematic',
-	},
-	{
-		name: 'Investor Decks',
-		description:
-			'Pitch deck redesigns that move investors from logic to emotion using psychological visual triggers.',
-		href: '/services/decks',
-	},
-	{
-		name: 'Ghost Strategy',
-		description:
-			'Faceless execution for high-profile founders who need authority without the time investment.',
-		href: '/services/ghost',
-	},
-	{
 		name: 'The Authority Retainer',
 		description:
-			'Full-service monthly partnership providing continuous visual dominance on LinkedIn and X.',
+			'A monthly partnership for founders shaping perception while raising capital. Includes ongoing narrative audits, continuous visual production, and pitch deck refinement.',
 		href: '/services/retainer',
+	},
+	{
+		name: 'The Black Box Protocol',
+		description:
+			'For teams with heavy technical documentation. We convert whitepapers and patents into investor-ready visual narratives and board-level clarity.',
+		href: '/protocol',
+	},
+	{
+		name: 'The Hunter Program',
+		description:
+			'High-performance websites built for clarity and conversion. Two tracks: Creator Series and Business Series. Fast. Focused. Built to sell.',
+		href: '/hunter-program',
 	},
 ];
 
 const stats = [
-	{ value: '$50M+', label: 'Capital Influence' },
-	{ value: '3', label: 'Days Turnaround' },
-	{ value: '100%', label: 'Faceless Execution' },
+	{ value: '$50M+', label: 'Capital Influenced' },
+	{ value: '3 Days', label: 'Average Turnaround' },
+	{ value: 'Available', label: 'Faceless Execution' },
 ];
 
 import { useAuth } from '@/contexts/AuthContext';
@@ -105,12 +87,11 @@ const Index = () => {
 							</motion.div>
 						) : null}
 						<h1 className="text-hero mb-8">
-							Sellability is a{' '}
-							<span className="text-primary">Technical Signal</span>
+							Engineering Brilliance, <br />
+							<span className="text-primary">Made Visible.</span>
 						</h1>
 						<p className="text-subtitle max-w-2xl mx-auto mb-12">
-							AlphaFrame converts technical complexity into Visual Authority.
-							<br className="hidden sm:block" /> We ensure Deep-Tech Founders command the capital and attention they deserve.
+							Technical genius is often invisible. We deploy the Black Box Protocol to translate dense data into "Fortune 500" grade visual assets in 48 hours.
 						</p>
 
 						<motion.div
@@ -121,30 +102,208 @@ const Index = () => {
 						>
 							<div className="relative inline-block">
 								<GlowingEffect disabled={false} glow className="pointer-events-none rounded-md" />
-								<Link to="/protocol" className="relative z-10 inline-block" onClick={handleAuthCheck}>
+								<Link to="/contact" className="relative z-10 inline-block" onClick={handleAuthCheck}>
 									<GradientButton className="group">
-										View The Protocol
+										Deep tech, shown clearly
 										<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
 									</GradientButton>
 								</Link>
 							</div>
-							<Link to="/audit-portfolio" onClick={handleAuthCheck}>
-								<Button
-									variant="outline"
-									size="lg"
-									className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-								>
-									Audit Your Brand
-								</Button>
-							</Link>
 						</motion.div>
 					</motion.div>
 				</div>
 			</section>
 
-			{/* Stats Section */}
+			{/* What We Do Section */}
+			<section className="py-24 bg-card/10">
+				<div className="container mx-auto px-6 max-w-4xl text-center">
+					<AnimatedSection>
+						<h2 className="text-section mb-6">What We Do</h2>
+						<h3 className="text-2xl md:text-3xl font-medium mb-6">
+							AlphaFrame converts raw technical material into visual authority.
+						</h3>
+						<p className="text-muted-foreground text-lg mb-4">
+							We take what you have already built and present it in a way that signals competence, confidence, and scale.
+						</p>
+						<p className="text-primary font-medium">No hype. No oversimplification.</p>
+					</AnimatedSection>
+				</div>
+			</section>
+
+			{/* Who This Is For */}
+			<section className="py-24">
+				<div className="container mx-auto px-6 max-w-4xl">
+					<AnimatedSection>
+						<h2 className="text-section mb-12 text-center">Who This Is For</h2>
+						<div className="grid md:grid-cols-2 gap-12 items-center">
+							<div className="space-y-6">
+								<div className="flex items-start gap-4">
+									<div className="bg-primary/10 p-3 rounded-lg">
+										<Target className="text-primary" size={24} />
+									</div>
+									<div>
+										<h4 className="text-xl font-bold mb-2">Founders building complex products.</h4>
+										<p className="text-muted-foreground">Deep-tech, climate, infrastructure, AI, hardware.</p>
+									</div>
+								</div>
+								<div className="flex items-start gap-4">
+									<div className="bg-accent/10 p-3 rounded-lg">
+										<Zap className="text-accent" size={24} />
+									</div>
+									<div>
+										<h4 className="text-xl font-bold mb-2">Teams raising capital.</h4>
+										<p className="text-muted-foreground">Or preparing for serious investor scrutiny.</p>
+									</div>
+								</div>
+							</div>
+							<div className="bg-card/20 p-8 rounded-2xl border border-border text-center">
+								<p className="text-xl font-medium italic">
+									"If your work sounds impressive but looks confusing, this fits."
+								</p>
+							</div>
+						</div>
+					</AnimatedSection>
+				</div>
+			</section>
+
+			{/* The Problem & Outcome */}
+			<section className="py-32 bg-card/30">
+				<div className="container mx-auto px-6">
+					<div className="grid lg:grid-cols-2 gap-16">
+						<AnimatedSection>
+							<h2 className="text-section mb-8">The Problem</h2>
+							<div className="space-y-6 text-lg">
+								<p>
+									<span className="font-bold text-primary">Investors do not study. They scan.</span>
+								</p>
+								<p className="text-muted-foreground">
+									Dense decks, whitepapers, and technical language signal risk when presented poorly.
+								</p>
+								<p className="text-muted-foreground">
+									Strong products lose funding because their visuals fail to communicate trust.
+								</p>
+							</div>
+						</AnimatedSection>
+
+						<AnimatedSection delay={0.2}>
+							<h2 className="text-section mb-8">The Outcome</h2>
+							<div className="space-y-6">
+								<ul className="space-y-4">
+									<li className="flex items-center gap-3 text-xl">
+										<Eye className="text-primary" /> Clear visuals.
+									</li>
+									<li className="flex items-center gap-3 text-xl">
+										<Zap className="text-primary" /> Faster understanding.
+									</li>
+									<li className="flex items-center gap-3 text-xl">
+										<Target className="text-primary" /> Stronger investor confidence.
+									</li>
+								</ul>
+								<p className="text-xl font-medium pt-4">Your product speaks for itself.</p>
+							</div>
+						</AnimatedSection>
+					</div>
+				</div>
+			</section>
+
+			{/* How AlphaFrame Works */}
+			<section className="py-32">
+				<div className="container mx-auto px-6">
+					<AnimatedSection className="text-center mb-20">
+						<h2 className="text-section mb-6">How AlphaFrame Works</h2>
+					</AnimatedSection>
+
+					<div className="grid md:grid-cols-3 gap-8">
+						{/* Step 1 */}
+						<AnimatedSection delay={0.1}>
+							<div className="h-full bg-card/40 border border-border p-8 rounded-2xl">
+								<div className="text-primary text-sm font-mono mb-4">STEP ONE</div>
+								<h3 className="text-2xl font-bold mb-4">Narrative Audit</h3>
+								<p className="text-muted-foreground mb-6">
+									We review your current materials and your competitive landscape.
+								</p>
+								<div className="space-y-2 text-sm text-muted-foreground">
+									<p>• What confuses investors</p>
+									<p>• Where attention drops</p>
+									<p>• Which visual signals weaken trust</p>
+								</div>
+							</div>
+						</AnimatedSection>
+
+						{/* Step 2 */}
+						<AnimatedSection delay={0.2}>
+							<div className="h-full bg-card/40 border border-border p-8 rounded-2xl">
+								<div className="text-primary text-sm font-mono mb-4">STEP TWO</div>
+								<h3 className="text-2xl font-bold mb-4">Investor-Grade Visuals</h3>
+								<p className="text-muted-foreground mb-6">
+									We convert your technical content into high-fidelity deliverables.
+								</p>
+								<div className="space-y-2 text-sm text-muted-foreground">
+									<p>• Visual narratives from patents</p>
+									<p>• Psychological deck redesigns</p>
+									<p>• Cinematic visual loops</p>
+								</div>
+							</div>
+						</AnimatedSection>
+
+						{/* Step 3 */}
+						<AnimatedSection delay={0.3}>
+							<div className="h-full bg-card/40 border border-border p-8 rounded-2xl">
+								<div className="text-primary text-sm font-mono mb-4">STEP THREE (OPTIONAL)</div>
+								<h3 className="text-2xl font-bold mb-4">Authority Execution</h3>
+								<p className="text-muted-foreground mb-6">For founders who prefer distance.</p>
+								<div className="space-y-2 text-sm text-muted-foreground">
+									<p>• Visual presence management</p>
+									<p>• Authority on LinkedIn and X</p>
+									<p>• No time drain on your side</p>
+								</div>
+							</div>
+						</AnimatedSection>
+					</div>
+				</div>
+			</section>
+
+			{/* Core Engagements (Products Section) */}
+			<section className="py-32 bg-card/20">
+				<div className="container mx-auto px-6">
+					<AnimatedSection className="text-center mb-20">
+						<h2 className="text-section mb-6">Core Engagements</h2>
+					</AnimatedSection>
+
+					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+						{products.map((product, index) => (
+							<ProductCard
+								key={product.name}
+								name={product.name}
+								description={product.description}
+								href={product.href}
+								index={index}
+								onClick={handleAuthCheck}
+							/>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Why AlphaFrame Exists (Vision) */}
+			<section className="py-24">
+				<div className="container mx-auto px-6 text-center max-w-3xl">
+					<AnimatedSection>
+						<h2 className="text-section mb-8">Why AlphaFrame Exists</h2>
+						<h3 className="text-3xl md:text-4xl font-bold mb-8">
+							Brilliant work disappears in visual noise.
+						</h3>
+						<p className="text-xl text-muted-foreground">
+							We remove friction between intelligence and trust.
+						</p>
+					</AnimatedSection>
+				</div>
+			</section>
+
+			{/* Proof (Stats) */}
 			<AnimatedSection className="py-24 border-y border-border bg-card/20">
 				<div className="container mx-auto px-6">
+					<h2 className="text-section text-center mb-12">Proof</h2>
 					<div className="grid grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
 						{stats.map((stat, index) => (
 							<motion.div
@@ -167,106 +326,15 @@ const Index = () => {
 				</div>
 			</AnimatedSection>
 
-			{/* Products Section */}
-			<section className="py-32">
-				<div className="container mx-auto px-6">
-					<AnimatedSection className="text-center mb-20">
-						<h2 className="text-section mb-6">The Protocol</h2>
-						<p className="text-subtitle max-w-2xl mx-auto">
-							A precision-engineered suite of visual deliverables designed to
-							<br className="hidden sm:block" /> bridge the gap between your engineering and investor intuition.
-						</p>
-					</AnimatedSection>
-
-					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-						{products.map((product, index) => (
-							<ProductCard
-								key={product.name}
-								name={product.name}
-								description={product.description}
-								href={product.href}
-								index={index}
-								onClick={handleAuthCheck}
-							/>
-						))}
-					</div>
-				</div>
-			</section>
-
-			{/* Vision & Mission Section */}
-			<section className="py-32 bg-card/30">
-				<div className="container mx-auto px-6">
-					<div className="grid lg:grid-cols-2 gap-16 items-center">
-						<AnimatedSection>
-							<div className="space-y-12">
-								<div className="flex items-start space-x-6">
-									<div className="bg-primary/10 p-4 rounded-2xl">
-										<Target className="text-primary" size={32} />
-									</div>
-									<div>
-										<h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-										<p className="text-muted-foreground leading-relaxed">
-											To eliminate the "Gray Noise" that buries brilliant founders.
-											<br className="hidden sm:block" /> We make genius visible through high-fidelity design and strategic narrative.
-										</p>
-									</div>
-								</div>
-
-								<div className="flex items-start space-x-6">
-									<div className="bg-accent/10 p-4 rounded-2xl">
-										<Eye className="text-accent-foreground" size={32} />
-									</div>
-									<div>
-										<h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-										<p className="text-muted-foreground leading-relaxed">
-											To be the standard-bearer for Visual Authority in the Deep-Tech and Climate sectors,
-											<br className="hidden sm:block" /> proving that complex tech doesn't have to look boring.
-										</p>
-									</div>
-								</div>
-							</div>
-						</AnimatedSection>
-
-						<AnimatedSection delay={0.2}>
-							<div className="bg-gradient-to-br from-primary/5 to-accent/5 p-12 rounded-3xl border border-border">
-								<div className="flex items-center space-x-4 mb-8">
-									<Zap className="text-primary" size={40} />
-									<h3 className="text-3xl font-bold">The Opportunity Cost</h3>
-								</div>
-
-								<div className="space-y-6">
-									<div className="flex justify-between items-center py-4 border-b border-border/50">
-										<span className="font-medium">Attention Lost to Noise</span>
-										<span className="text-2xl font-bold text-primary">80%</span>
-									</div>
-									<div className="flex justify-between items-center py-4 border-b border-border/50">
-										<span className="font-medium">Trust through Visuals</span>
-										<span className="text-2xl font-bold text-primary">94%</span>
-									</div>
-									<div className="flex justify-between items-center py-4">
-										<span className="font-medium">Missed Capital</span>
-										<span className="text-2xl font-bold text-white">
-											Immeasurable
-										</span>
-									</div>
-								</div>
-							</div>
-						</AnimatedSection>
-					</div>
-				</div>
-			</section>
-
-			{/* CTA Section */}
+			{/* Capacity (CTA) */}
 			<section className="py-32">
 				<div className="container mx-auto px-6">
 					<AnimatedSection>
 						<div className="text-center bg-gradient-to-br from-primary/10 via-transparent to-accent/10 p-16 rounded-3xl border border-border">
-							<h2 className="text-section mb-6">
-								Are You Ready to be Seen?
-							</h2>
+							<h2 className="text-section mb-6">Capacity</h2>
 							<p className="text-subtitle max-w-2xl mx-auto mb-12">
-								We only onboard two founders per month to ensure absolute quality.
-								<br className="hidden sm:block" /> Secure your slot in the AlphaFrame Protocol.
+								We onboard two founders per month.
+								<br className="hidden sm:block" /> Quality stays absolute.
 							</p>
 
 							<div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -275,25 +343,7 @@ const Index = () => {
 										size="lg"
 										className="bg-primary text-primary-foreground hover:bg-primary/90 animate-glow-pulse"
 									>
-										Apply for Protocol
-									</Button>
-								</Link>
-								<Link to="/audit-portfolio" onClick={handleAuthCheck}>
-									<Button
-										variant="outline"
-										size="lg"
-										className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-									>
-										See Case Studies
-									</Button>
-								</Link>
-								<Link to="/contact" onClick={handleAuthCheck}>
-									<Button
-										variant="ghost"
-										size="lg"
-										className="text-muted-foreground hover:text-foreground"
-									>
-										Marketer Inquiry
+										Apply to Enter AlphaFrame
 									</Button>
 								</Link>
 							</div>

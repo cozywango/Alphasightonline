@@ -9,76 +9,144 @@ const Protocol = () => {
   const steps = [
     {
       id: "01",
-      title: "Algorithmic Ingestion",
+      title: "Technical Ingestion",
       icon: <Database className="text-primary" size={32} />,
-      description: "We don't ask for a 'brief'. We ingest your raw data.",
-      detail: "We feed your whitepapers and technical documentation into our proprietary logic stack. Using custom-tuned analytical algorithms, we extract the 'Contrarian Truths' hidden in your data—the specific insights that trigger investor FOMO."
+      description: "You provide raw material.",
+      detail: (
+        <div className="space-y-4">
+          <div>
+            <span className="text-primary/80">We ingest:</span>
+            <ul className="list-disc list-inside pl-2 mt-1 space-y-1">
+              <li>Whitepapers</li>
+              <li>Patents</li>
+              <li>Technical documentation</li>
+              <li>Research decks</li>
+            </ul>
+          </div>
+          <div>
+            <span className="text-primary/80">We analyze to identify:</span>
+            <ul className="list-disc list-inside pl-2 mt-1 space-y-1">
+              <li>What matters to investors</li>
+              <li>What differentiates you</li>
+              <li>What gets ignored or misunderstood</li>
+            </ul>
+          </div>
+          <p className="italic pt-2">The goal is extraction of signal, not summarization.</p>
+        </div>
+      )
     },
     {
       id: "02",
       title: "Narrative Architecture",
       icon: <Layers className="text-primary" size={32} />,
-      description: "We structure the argument before we design the pixels.",
-      detail: "Using a 10-slide 'Investor Logic' framework, we map out the psychological journey of the viewer. Every slide has a tactical purpose: to move the audience from 'Curiosity' to 'Conviction' using behavioral triggers."
+      description: "We design the argument before the visuals.",
+      detail: (
+        <div className="space-y-4">
+          <p>Your content is structured into a 10-slide investor logic framework.</p>
+          <div>
+            <span className="text-primary/80">Each slide has a defined role:</span>
+            <ul className="list-disc list-inside pl-2 mt-1 space-y-1">
+              <li>Introduce the problem</li>
+              <li>Establish credibility</li>
+              <li>Clarify the mechanism</li>
+              <li>Signal scale and defensibility</li>
+              <li>Create conviction</li>
+            </ul>
+          </div>
+          <p className="italic pt-2">Nothing decorative. Everything intentional.</p>
+        </div>
+      )
     },
     {
       id: "03",
-      title: "Generative Synthesis",
+      title: "Visual Synthesis",
       icon: <Aperture className="text-primary" size={32} />,
-      description: "We create visuals that do not exist in reality.",
-      detail: "Leveraging a hybrid stack of generative models, we synthesize high-fidelity, abstract technical imagery. We use 'Cinematic Industrialism' prompting parameters to achieve lighting and texture that mimics high-budget production."
+      description: "We create visuals built for concepts that lack physical form.",
+      detail: (
+        <div className="space-y-4">
+          <div>
+            <span className="text-primary/80">Using generative and custom visual systems, we produce:</span>
+            <ul className="list-disc list-inside pl-2 mt-1 space-y-1">
+              <li>Abstract technical imagery</li>
+              <li>System-level representations</li>
+              <li>Hardware and process visualizations</li>
+            </ul>
+          </div>
+          <p className="italic pt-2">Every image exists to explain, not impress.</p>
+        </div>
+      )
     },
     {
       id: "04",
-      title: "The Alpha Polish",
+      title: "Design Refinement",
       icon: <Cpu className="text-primary" size={32} />,
-      description: "Where Artificial Intelligence ends, Human Design begins.",
-      detail: "Raw algorithmic output is never the final product. We process every asset through a rigorous manual design phase—applying film grain, color grading, and Swiss-style typography to ensure the final output feels organic, not synthetic."
+      description: "Automation stops before credibility breaks.",
+      detail: (
+        <div className="space-y-4">
+          <div>
+            <span className="text-primary/80">Every asset passes through a manual design process:</span>
+            <ul className="list-disc list-inside pl-2 mt-1 space-y-1">
+              <li>Typography refinement</li>
+              <li>Color grading</li>
+              <li>Texture and contrast tuning</li>
+              <li>Consistency across the full narrative</li>
+            </ul>
+          </div>
+          <p className="italic pt-2">The result feels precise, controlled, and human.</p>
+        </div>
+      )
     }
   ];
 
   return (
     <div className="min-h-screen py-12">
       <div className="container mx-auto px-6">
-        
+
         {/* Hero Section */}
         <AnimatedSection>
-          <div className="text-center mb-12">
+          <div className="text-center mb-20">
             <h1 className="text-hero mb-6">
               The AlphaFrame <span className="text-primary">Protocol</span>
             </h1>
-            <p className="text-subtitle max-w-3xl mx-auto">
-              A closed-loop workflow designed to extract technical genius and project undeniable authority —
-              condensed into a compact, classified briefing.
+            <p className="text-subtitle max-w-3xl mx-auto mb-8">
+              A structured workflow that converts technical material into investor-grade visual assets.
+            </p>
+            <p className="text-lg font-medium text-muted-foreground/80">
+              No briefs. No guesswork. No dilution of complexity.
             </p>
           </div>
         </AnimatedSection>
 
-        {/* Compact Bento Grid Workflow (2x2) */}
-        <section className="mb-16">
+        {/* Workflow Steps */}
+        <section className="mb-24">
           <AnimatedSection>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {steps.map((step, index) => (
                 <motion.div
                   key={step.id}
-                  initial={{ opacity: 0, y: 6 }}
+                  initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.04, duration: 0.22 }}
-                  className="bg-card/40 backdrop-blur rounded-xl border-[0.5px] border-border p-6"
+                  transition={{ delay: index * 0.1, duration: 0.4 }}
+                  className="bg-card/40 backdrop-blur rounded-2xl border-[0.5px] border-border p-8 h-full"
                 >
-                  <div className="flex items-start gap-3">
-                    <div className="text-primary/90 mt-1">{step.icon}</div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="text-xs tracking-wider text-muted-foreground">PHASE {step.id}</div>
-                          <h3 className="text-lg font-semibold leading-tight">{step.title}</h3>
+                  <div className="flex flex-col h-full">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center gap-4">
+                        <div className="bg-primary/10 p-3 rounded-xl text-primary">
+                          {step.icon}
                         </div>
-                        <div className="text-sm text-muted-foreground">{/* compact label area */}</div>
+                        <div>
+                          <div className="text-xs font-mono tracking-widest text-primary/60 mb-1">PHASE {step.id}</div>
+                          <h3 className="text-xl font-bold">{step.title}</h3>
+                        </div>
                       </div>
-                      <p className="text-sm text-muted-foreground mt-2 leading-snug">{step.description}</p>
-                      <p className="text-sm text-muted-foreground/80 mt-3 break-words">{step.detail}</p>
+                    </div>
+
+                    <p className="text-lg font-medium mb-6">{step.description}</p>
+
+                    <div className="text-sm text-muted-foreground leading-relaxed mt-auto">
+                      {step.detail}
                     </div>
                   </div>
                 </motion.div>
@@ -87,63 +155,75 @@ const Protocol = () => {
           </AnimatedSection>
         </section>
 
-        {/* The Deliverables (denser) */}
-        <section className="mb-16">
+        {/* The Deliverables */}
+        <section className="mb-24">
           <AnimatedSection>
-            <div className="bg-card/40 backdrop-blur rounded-2xl border-[0.5px] border-border p-8">
-              <div className="text-center mb-8">
-                <h2 className="text-section mb-3">The Output</h2>
-                <p className="text-sm max-w-2xl mx-auto text-muted-foreground">
-                  Deployment-ready strategic assets — delivered with technical precision.
+            <div className="bg-card/20 backdrop-blur rounded-3xl border-[0.5px] border-border p-12">
+              <div className="text-center mb-16">
+                <h2 className="text-section mb-4">The Output</h2>
+                <p className="text-xl text-muted-foreground">
+                  Deployment-ready assets built for investor scrutiny.
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="p-4 rounded-lg border-[0.5px] border-border bg-background/20">
-                  <div className="flex items-center gap-3 text-sm font-semibold text-primary mb-2">
-                    <Layers size={18} />
-                    <span>The Narrative Carousel</span>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-lg font-bold text-primary">
+                    <Layers size={24} />
+                    <span>Narrative Carousel</span>
                   </div>
-                  <p className="text-xs text-muted-foreground">10-slide visual document that deconstructs a single technical concept.</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    A 10-slide visual narrative explaining a single technical concept with clarity. <br />
+                    Used for investor outreach, presentations, and authority signaling.
+                  </p>
                 </div>
 
-                <div className="p-4 rounded-lg border-[0.5px] border-border bg-background/20">
-                  <div className="flex items-center gap-3 text-sm font-semibold text-primary mb-2">
-                    <Aperture size={18} />
-                    <span>The Technical Loop</span>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-lg font-bold text-primary">
+                    <Aperture size={24} />
+                    <span>Technical Loop</span>
                   </div>
-                  <p className="text-xs text-muted-foreground">8-second, 4K carefully curated loops that visualize hardware or process.</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    An 8-second, 4K visual loop representing hardware, systems, or processes. <br />
+                    Designed for decks, landing pages, and visual reinforcement.
+                  </p>
                 </div>
 
-                <div className="p-4 rounded-lg border-[0.5px] border-border bg-background/20">
-                  <div className="flex items-center gap-3 text-sm font-semibold text-primary mb-2">
-                    <Scan size={18} />
-                    <span>The Visual Audit</span>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-lg font-bold text-primary">
+                    <Scan size={24} />
+                    <span>Visual Audit</span>
                   </div>
-                  <p className="text-xs text-muted-foreground">Monthly intelligence reports highlighting competitor gaps and opportunities.</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    A recurring report outlining: <br />
+                    • Competitor visual gaps <br />
+                    • Missed authority signals <br />
+                    • Opportunities for differentiation
+                  </p>
                 </div>
               </div>
             </div>
           </AnimatedSection>
         </section>
 
-        {/* CTA Section (tighter) */}
-        <section className="mb-8">
+        {/* CTA Section */}
+        <section className="mb-16">
           <AnimatedSection>
-            <div className="text-center bg-card/40 backdrop-blur p-8 rounded-xl border-[0.5px] border-border">
-              <h2 className="text-xl font-bold mb-3">System Ready.</h2>
-              <p className="text-sm text-muted-foreground max-w-xl mx-auto mb-6">
-                The Protocol is deployed on a first-come, first-served basis. We cap our active roster to maintain quality control.
+            <div className="text-center bg-gradient-to-br from-primary/5 via-card/40 to-accent/5 backdrop-blur p-16 rounded-3xl border-[0.5px] border-border">
+              <h2 className="text-3xl font-bold mb-4">Deployment</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+                The AlphaFrame Protocol runs on limited capacity. We cap active engagements to protect quality.
+                <br /><span className="text-primary font-medium">First-come. Carefully selected.</span>
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link to="/contact">
-                  <GradientButton className="min-w-[180px]">Initiate Protocol</GradientButton>
+                  <GradientButton className="min-w-[200px] h-12 text-base">Initiate Protocol</GradientButton>
                 </Link>
                 <Link to="/audit-portfolio">
-                  <Button variant="outline" size="sm" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground py-2">See Case Studies</Button>
+                  <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">See Case Studies</Button>
                 </Link>
-               </div>
+              </div>
             </div>
           </AnimatedSection>
         </section>

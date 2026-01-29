@@ -46,7 +46,7 @@ const GlowButton = ({ children = 'Apply', className, ...props }: GlowButtonProps
 
             {/* Actual Button */}
             <button
-                className="relative z-10 w-[120px] h-[48px] bg-[#1a1a1a] text-white font-medium text-sm tracking-wide rounded-[25px] border border-white/10 overflow-hidden outline-none transition-transform active:scale-95"
+                className="relative z-10 w-full h-[48px] bg-[#1a1a1a] text-white font-medium text-sm tracking-wide rounded-[25px] border border-white/10 overflow-hidden outline-none transition-transform active:scale-95"
                 {...props}
             >
                 {children}
