@@ -167,7 +167,7 @@ interface AuthComponentProps {
     brandName?: string;
 }
 
-export const AuthComponent = ({ logo = <DefaultLogo />, brandName = "AlphaFrame" }: AuthComponentProps) => {
+export const AuthComponent = ({ logo = <DefaultLogo />, brandName = "Alphasight Online" }: AuthComponentProps) => {
     const navigate = useNavigate();
     const searchParams = new URLSearchParams(window.location.search);
     const mode = searchParams.get('mode');

@@ -27,7 +27,7 @@ const HunterProgram = () => {
                             <p>The Hunter Program is a revenue partnership.</p>
                             <ul className="list-none space-y-2">
                                 <li>You introduce clients who need stronger digital presence.</li>
-                                <li>AlphaFrame builds the asset.</li>
+                                <li>Alphasight Online builds the asset.</li>
                                 <li>You earn commission.</li>
                             </ul>
                             <p className="pt-4 font-medium text-foreground">
@@ -46,7 +46,7 @@ const HunterProgram = () => {
                             <h2 className="text-section mb-6">Visual Authority</h2>
                             <div className="text-lg text-muted-foreground space-y-6">
                                 <p>
-                                    AlphaFrame translates complex technical work into authority-driven visuals.
+                                    Alphasight Online translates complex technical work into authority-driven visuals.
                                 </p>
                                 <p>
                                     To fund that work without compromising independence, we partner with trusted operators through the Hunter Program.
@@ -295,10 +295,10 @@ const HunterProgram = () => {
                     </div>
                 </AnimatedSection>
 
-                {/* Closing / Why AlphaFrame */}
+                {/* Closing / Why Alphasight Online */}
                 <AnimatedSection>
                     <div className="text-center max-w-3xl mx-auto">
-                        <h2 className="text-section mb-6">Why AlphaFrame</h2>
+                        <h2 className="text-section mb-6">Why Alphasight Online</h2>
                         <p className="text-xl text-muted-foreground mb-12">
                             We design for deep-tech companies under investor scrutiny.
                             The Hunter Program brings that same visual discipline to creators and businesses.

@@ -39,7 +39,7 @@ const ForCreators = () => {
               Don’t Just Post. <span className="text-primary">Publish.</span>
             </h1>
             <p className="text-subtitle max-w-3xl mx-auto mb-6">
-              AlphaFrame builds high-performance, Catalog-Mode websites for creators and businesses who want lasting visual authority.
+              Alphasight Online builds high-performance, Catalog-Mode websites for creators and businesses who want lasting visual authority.
             </p>
             <p className="text-lg text-muted-foreground">
               We bring deep-tech design discipline to personal brands and commercial catalogs.
@@ -54,7 +54,7 @@ const ForCreators = () => {
             <div className="text-lg text-muted-foreground leading-relaxed space-y-4 mb-8">
               <p>Social platforms do not belong to you.<br />Algorithms change. Reach disappears.</p>
               <p className="text-primary font-medium text-xl">A website is permanent.</p>
-              <p>AlphaFrame builds owned digital assets designed to outlast platforms and trends.</p>
+              <p>Alphasight Online builds owned digital assets designed to outlast platforms and trends.</p>
               <p>We do not use generic templates. We apply the same visual psychology used in venture-backed deep-tech companies, adapted for creators and businesses.</p>
             </div>
 
@@ -307,7 +307,7 @@ const ForCreators = () => {
         {/* Process */}
         <AnimatedSection>
           <div className="mb-24 max-w-4xl mx-auto">
-            <h2 className="text-section text-center mb-12">How the AlphaFrame Process Works</h2>
+            <h2 className="text-section text-center mb-12">How the Alphasight Process Works</h2>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-card/40 p-6 rounded-xl border border-border">
                 <div className="text-primary font-bold mb-2">01. Brief</div>
@@ -315,7 +315,7 @@ const ForCreators = () => {
               </div>
               <div className="bg-card/40 p-6 rounded-xl border border-border">
                 <div className="text-primary font-bold mb-2">02. Build</div>
-                <p className="text-sm text-muted-foreground">We construct your site using AlphaFrame visual systems.</p>
+                <p className="text-sm text-muted-foreground">We construct your site using Alphasight visual systems.</p>
               </div>
               <div className="bg-card/40 p-6 rounded-xl border border-border">
                 <div className="text-primary font-bold mb-2">03. Review</div>
@@ -343,7 +343,7 @@ const ForCreators = () => {
                 <p className="text-muted-foreground">We build on modern platforms such as Framer, Webflow, or Vercel. Hosting usually costs between zero and twenty dollars per month, paid directly to the provider.</p>
               </div>
               <div>
-                <h3 className="font-bold text-lg mb-2">Why AlphaFrame</h3>
+                <h3 className="font-bold text-lg mb-2">Why Alphasight Online</h3>
                 <p className="text-muted-foreground">We design for quantum computing and biotech companies under investor scrutiny. We apply the same clarity, precision, and speed to creators and businesses.</p>
               </div>
               <div>

@@ -13,6 +13,7 @@ export interface Project {
   id: string;
   image: string;
   title: string;
+  description?: string;
   link?: string;
 }
 
@@ -327,6 +328,11 @@ export const ImageLightbox: React.FC<ImageLightboxProps> = ({
             <div className="flex items-center justify-between gap-6">
               <div className="flex-1 min-w-0">
                 <h3 className="text-2xl font-bold text-foreground tracking-tight truncate">{currentProject?.title}</h3>
+                {currentProject?.description && (
+                  <p className="text-sm text-muted-foreground mt-1 line-clamp-2 md:line-clamp-none">
+                    {currentProject.description}
+                  </p>
+                )}
                 <div className="flex items-center gap-4 mt-2">
                   <div className="flex items-center gap-1.5 px-2.5 py-1 bg-card rounded-full border border-border">
                     {projects.map((_, idx) => (

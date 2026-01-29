@@ -13,7 +13,7 @@ const About = () => {
               Refining the <span className="text-primary">Lens</span> of Authority
             </h1>
             <p className="text-subtitle max-w-3xl mx-auto">
-              AlphaFrame is a Nairobi-based agency helping deep-tech and climate-tech founders communicate their value with precision.
+              Alphasight Online is a Nairobi-based agency helping deep-tech and climate-tech founders communicate their value with precision.
             </p>
             <p className="mt-6 text-lg text-muted-foreground font-medium">
               We work globally. We operate remotely. We focus narrowly.
@@ -34,7 +34,7 @@ const About = () => {
                   Founders with strong ideas lose capital to louder competitors because their work lacks visual authority.
                 </p>
                 <p className="text-foreground font-medium">
-                  AlphaFrame exists to correct that imbalance.
+                  Alphasight Online exists to correct that imbalance.
                 </p>
                 <div className="pl-6 border-l-2 border-primary my-8 py-2">
                   <p className="italic">We are not a marketing agency.<br />We function as a strategic asset partner.</p>
@@ -110,7 +110,7 @@ const About = () => {
             <div className="text-center mb-16">
               <h2 className="text-section mb-6">What We Deliver</h2>
               <p className="text-subtitle max-w-2xl mx-auto">
-                Three pillars define AlphaFrame output.
+                Three pillars define Alphasight Online output.
               </p>
             </div>
 
@@ -162,7 +162,7 @@ const About = () => {
             <div className="text-center mb-16">
               <h2 className="text-section mb-6">Our Operating Code</h2>
               <p className="text-subtitle max-w-2xl mx-auto">
-                These principles keep AlphaFrame focused and effective.
+                These principles keep Alphasight Online focused and effective.
               </p>
             </div>
 

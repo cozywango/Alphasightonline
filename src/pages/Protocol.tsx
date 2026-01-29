@@ -106,7 +106,7 @@ const Protocol = () => {
         <AnimatedSection>
           <div className="text-center mb-20">
             <h1 className="text-hero mb-6">
-              The AlphaFrame <span className="text-primary">Protocol</span>
+              The Alphasight Online <span className="text-primary">Protocol</span>
             </h1>
             <p className="text-subtitle max-w-3xl mx-auto mb-8">
               A structured workflow that converts technical material into investor-grade visual assets.
@@ -212,7 +212,7 @@ const Protocol = () => {
             <div className="text-center bg-gradient-to-br from-primary/5 via-card/40 to-accent/5 backdrop-blur p-16 rounded-3xl border-[0.5px] border-border">
               <h2 className="text-3xl font-bold mb-4">Deployment</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                The AlphaFrame Protocol runs on limited capacity. We cap active engagements to protect quality.
+                The Alphasight Online Protocol runs on limited capacity. We cap active engagements to protect quality.
                 <br /><span className="text-primary font-medium">First-come. Carefully selected.</span>
               </p>
 

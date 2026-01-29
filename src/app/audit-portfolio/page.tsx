@@ -78,6 +78,19 @@ const portfolioData = [
 			},
 		],
 	},
+	{
+		title: 'Brands',
+		gradient: 'linear-gradient(to right, #11998e, #38ef7d)',
+		projects: [
+			{
+				id: 'br1',
+				image: '/howcuteisthis.png',
+				title: 'How Cute Is This',
+				description: 'This is a Tier 3 business catalogue website built for How Cute Is This, a Nairobi-based perfume store seeking a permanent online home for their products. The site features WhatsApp integration for direct customer communication, a responsive cart experience, and clean, high-quality styling that adapts seamlessly across devices.',
+				link: 'https://howcuteisthis.vercel.app/',
+			},
+		],
+	},
 ];
 
 const AuditPortfolioPage = () => {

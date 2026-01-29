@@ -120,7 +120,7 @@ const Index = () => {
 					<AnimatedSection>
 						<h2 className="text-section mb-6">What We Do</h2>
 						<h3 className="text-2xl md:text-3xl font-medium mb-6">
-							AlphaFrame converts raw technical material into visual authority.
+							Alphasight Online converts raw technical material into visual authority.
 						</h3>
 						<p className="text-muted-foreground text-lg mb-4">
 							We take what you have already built and present it in a way that signals competence, confidence, and scale.
@@ -206,11 +206,11 @@ const Index = () => {
 				</div>
 			</section>
 
-			{/* How AlphaFrame Works */}
+			{/* How Alphasight Online Works */}
 			<section className="py-32">
 				<div className="container mx-auto px-6">
 					<AnimatedSection className="text-center mb-20">
-						<h2 className="text-section mb-6">How AlphaFrame Works</h2>
+						<h2 className="text-section mb-6">How Alphasight Online Works</h2>
 					</AnimatedSection>
 
 					<div className="grid md:grid-cols-3 gap-8">
@@ -285,11 +285,11 @@ const Index = () => {
 				</div>
 			</section>
 
-			{/* Why AlphaFrame Exists (Vision) */}
+			{/* Why Alphasight Online Exists (Vision) */}
 			<section className="py-24">
 				<div className="container mx-auto px-6 text-center max-w-3xl">
 					<AnimatedSection>
-						<h2 className="text-section mb-8">Why AlphaFrame Exists</h2>
+						<h2 className="text-section mb-8">Why Alphasight Online Exists</h2>
 						<h3 className="text-3xl md:text-4xl font-bold mb-8">
 							Brilliant work disappears in visual noise.
 						</h3>
@@ -343,7 +343,7 @@ const Index = () => {
 										size="lg"
 										className="bg-primary text-primary-foreground hover:bg-primary/90 animate-glow-pulse"
 									>
-										Apply to Enter AlphaFrame
+										Apply to Enter Alphasight Online
 									</Button>
 								</Link>
 							</div>

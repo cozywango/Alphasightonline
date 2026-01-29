@@ -9,7 +9,7 @@ interface GlowingEffectProps {
   inactiveZone?: number;
   proximity?: number;
   spread?: number;
-  variant?: "default" | "white" | "alphaframe";
+  variant?: "default" | "white" | "alphasight";
   glow?: boolean;
   className?: string;
   disabled?: boolean;
@@ -23,7 +23,7 @@ const GlowingEffect = memo(
     inactiveZone = 0, // FIXED: Set to 0 to remove the center dead zone
     proximity = 0,
     spread = 40, // FIXED: Increased for better visibility
-    variant = "alphaframe", // FIXED: Default to brand colors
+    variant = "alphasight", // FIXED: Default to brand colors
     glow = true, // FIXED: Default to true
     className,
     movementDuration = 2,
@@ -84,7 +84,7 @@ const GlowingEffect = memo(
             parseFloat(element.style.getPropertyValue("--start")) || 0;
           let targetAngle =
             (180 * Math.atan2(mouseY - center[1], mouseX - center[0])) /
-              Math.PI +
+            Math.PI +
             90;
 
           const angleDiff = ((targetAngle - currentAngle + 180) % 360) - 180;
@@ -149,8 +149,8 @@ const GlowingEffect = memo(
                   var(--black),
                   var(--black) calc(25% / var(--repeating-conic-gradient-times))
                 )`
-                  : variant === "alphaframe"
-                  ? `radial-gradient(circle, #FF5A00 10%, #FF5A0000 20%),
+                  : variant === "alphasight"
+                    ? `radial-gradient(circle, #FF5A00 10%, #FF5A0000 20%),
                 radial-gradient(circle at 40% 40%, #FFC000 5%, #FFC00000 15%),
                 radial-gradient(circle at 60% 60%, #FF5A00 10%, #FF5A0000 20%), 
                 radial-gradient(circle at 40% 60%, #FFFFFF 10%, #FFFFFF00 20%),
@@ -162,7 +162,7 @@ const GlowingEffect = memo(
                   #FFFFFF calc(75% / var(--repeating-conic-gradient-times)),
                   #FF5A00 calc(100% / var(--repeating-conic-gradient-times))
                 )`
-                  : `radial-gradient(circle, #dd7bbb 10%, #dd7bbb00 20%),
+                    : `radial-gradient(circle, #dd7bbb 10%, #dd7bbb00 20%),
                 radial-gradient(circle at 40% 40%, #d79f1e 5%, #d79f1e00 15%),
                 radial-gradient(circle at 60% 60%, #5a922c 10%, #5a922c00 20%), 
                 radial-gradient(circle at 40% 60%, #4c7894 10%, #4c789400 20%),

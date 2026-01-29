@@ -48,11 +48,11 @@ export const Navigation = () => {
 						>
 							<img
 								src="/logo.png"
-								alt="AlphaFrame logo"
+								alt="Alphasight Online logo"
 								className="h-8 w-auto mr-3"
 							/>
-							<span className="text-primary">Alpha</span>
-							<span className="text-foreground">Frame</span>
+							<span className="text-primary">Alphasight</span>
+							<span className="text-foreground ml-1">Online</span>
 						</Link>
 					</div>
 

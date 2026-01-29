@@ -13,7 +13,7 @@ const Retainer = () => {
             <motion.h1 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }} className="text-hero mb-4">
               The <span className="text-primary">Authority</span> Retainer
             </motion.h1>
-            <p className="text-subtitle max-w-3xl mx-auto">The full AlphaFrame protocol, deployed monthly. Capped at 2 clients.</p>
+            <p className="text-subtitle max-w-3xl mx-auto">The full Alphasight Online protocol, deployed monthly. Capped at 2 clients.</p>
           </div>
         </AnimatedSection>
 

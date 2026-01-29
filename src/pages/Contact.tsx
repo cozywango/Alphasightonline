@@ -85,7 +85,7 @@ const Contact = () => {
             <p className="text-subtitle max-w-2xl mx-auto">
               {activeTab === 'founder'
                 ? "We operate on a capped retainer model. Inquire now to check availability for the upcoming month."
-                : "Commission-only. High-ticket payouts. Apply to become an authorized AlphaFrame Hunter."}
+                : "Commission-only. High-ticket payouts. Apply to become an authorized Alphasight Hunter."}
             </p>
           </div>
         </AnimatedSection>
@@ -262,7 +262,7 @@ const Contact = () => {
 
                 <div className="space-y-4">
                   <a
-                    href="https://x.com/alphaframe55"
+                    href="https://x.com/alphasightke"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 p-4 rounded-xl bg-background border border-border hover:border-primary/50 transition-all duration-300 group"
@@ -270,12 +270,12 @@ const Contact = () => {
                     <Twitter className="text-primary group-hover:scale-110 transition-transform" size={24} />
                     <div>
                       <h4 className="font-semibold">X / Twitter</h4>
-                      <p className="text-muted-foreground text-sm">@alphaframe55</p>
+                      <p className="text-muted-foreground text-sm">@alphasightke</p>
                     </div>
                   </a>
 
                   <a
-                    href="https://www.instagram.com/alphaframeonline/?utm_source=ig_web_button_share_sheet"
+                    href="https://www.instagram.com/alphasightonline/?utm_source=ig_web_button_share_sheet"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 p-4 rounded-xl bg-background border border-border hover:border-primary/50 transition-all duration-300 group"
@@ -288,7 +288,7 @@ const Contact = () => {
                     </span>
                     <div>
                       <h4 className="font-semibold">Instagram</h4>
-                      <p className="text-muted-foreground text-sm">@alphaframeonline</p>
+                      <p className="text-muted-foreground text-sm">@alphasightonline</p>
                     </div>
                   </a>
                 </div>
