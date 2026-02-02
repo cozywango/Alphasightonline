@@ -4,20 +4,9 @@ import { GlowButton } from '@/components/ui/glow-button';
 import ProductInquiryModal from '@/components/ProductInquiryModal';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
-
 const ForCreators = () => {
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { user } = useAuth();
-  const navigate = useNavigate();
-
-  const handleAuthCheck = (e: React.MouseEvent) => {
-    if (!user) {
-      e.preventDefault();
-      navigate('/auth');
-    }
-  };
 
   const handleApply = (productName: string) => {
     setSelectedProduct(productName);

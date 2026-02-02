@@ -1,25 +1,12 @@
 import { useState } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, User } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { GradientButton } from '@/components/ui/gradient-button';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 
 export const Navigation = () => {
-	const { user } = useAuth();
-	const navigate = useNavigate();
 	const [isOpen, setIsOpen] = useState(false);
-
-	const handleAuthCheck = (e: React.MouseEvent) => {
-		if (!user) {
-			e.preventDefault();
-			setIsOpen(false);
-			navigate('/auth');
-		} else {
-			setIsOpen(false);
-		}
-	};
 
 	const navItems = [
 		{ href: '/', label: 'Overview' },
@@ -73,29 +60,14 @@ export const Navigation = () => {
 									to={item.href}
 									style={{ transform: 'none' }}
 									className="text-muted-foreground transition-colors duration-300 font-medium relative z-10 px-1 hover:!text-muted-foreground hover:bg-transparent focus:bg-transparent hover:!scale-100 focus:!scale-100 active:!scale-100 !transform-none"
-									onClick={handleAuthCheck}
 								>
 									{item.label}
 								</Link>
 							</div>
 						))}
-						<Link to="/audit-portfolio" onClick={handleAuthCheck}>
+						<Link to="/audit-portfolio">
 							<GradientButton size="sm" className="w-fit">Audit Portfolio</GradientButton>
 						</Link>
-						{!user ? (
-							<div className="flex items-center gap-4">
-								<Link to="/auth?mode=signin">
-									<GradientButton size="sm" className="w-fit">Sign In</GradientButton>
-								</Link>
-								<Link to="/auth">
-									<GradientButton size="sm" className="w-fit">Sign Up</GradientButton>
-								</Link>
-							</div>
-						) : (
-							<Link to="/profile" className="p-2 rounded-full hover:bg-accent transition-colors">
-								<User className="w-6 h-6 text-foreground" />
-							</Link>
-						)}
 					</div>
 
 					{/* Mobile Menu Toggle */}
@@ -131,29 +103,15 @@ export const Navigation = () => {
 										to={item.href}
 										style={{ transform: 'none' }}
 										className="text-muted-foreground transition-colors duration-300 font-medium relative z-10 hover:!text-muted-foreground hover:bg-transparent focus:bg-transparent hover:!scale-100 focus:!scale-100 active:!scale-100 !transform-none"
-										onClick={handleAuthCheck}
+										onClick={() => setIsOpen(false)}
 									>
 										{item.label}
 									</Link>
 								</div>
 							))}
-							<Link to="/audit-portfolio" onClick={handleAuthCheck}>
+							<Link to="/audit-portfolio" onClick={() => setIsOpen(false)}>
 								<GradientButton size="sm" className="w-fit">Audit Portfolio</GradientButton>
 							</Link>
-							{!user ? (
-								<div className="flex flex-col gap-4">
-									<Link to="/auth?mode=signin" onClick={() => setIsOpen(false)}>
-										<GradientButton size="sm" className="w-fit">Sign In</GradientButton>
-									</Link>
-									<Link to="/auth" onClick={() => setIsOpen(false)}>
-										<GradientButton size="sm" className="w-fit">Sign Up</GradientButton>
-									</Link>
-								</div>
-							) : (
-								<Link to="/profile" onClick={() => setIsOpen(false)} className="flex items-center gap-2 text-foreground font-medium p-2">
-									<User className="w-5 h-5" /> Profile
-								</Link>
-							)}
 						</div>
 					</motion.div>
 				)}

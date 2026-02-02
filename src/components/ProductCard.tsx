@@ -9,10 +9,9 @@ interface ProductCardProps {
   description: string;
   href: string;
   index: number;
-  onClick?: (e: React.MouseEvent) => void;
 }
 
-export const ProductCard: FC<ProductCardProps> = ({ name, description, href, index, onClick }) => {
+export const ProductCard: FC<ProductCardProps> = ({ name, description, href, index }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
@@ -21,7 +20,7 @@ export const ProductCard: FC<ProductCardProps> = ({ name, description, href, ind
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group"
     >
-      <Link to={href} onClick={onClick}>
+      <Link to={href}>
         <div className="relative">
           <GlowingEffect disabled={false} glow className="pointer-events-none rounded-2xl" />
           <div className="bg-card border border-border rounded-2xl p-8 transition-all duration-500 hover:shadow-[0_0_30px_hsl(24_0%_50%/0.06)] relative overflow-hidden !transform-none" style={{ transform: 'none' }}>

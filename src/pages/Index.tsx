@@ -35,19 +35,8 @@ const stats = [
 	{ value: 'Available', label: 'Faceless Execution' },
 ];
 
-import { useAuth } from '@/contexts/AuthContext';
-
 const Index = () => {
-	const { user } = useAuth();
 	const navigate = useNavigate();
-	const username = user?.user_metadata?.username;
-
-	const handleAuthCheck = (e: React.MouseEvent) => {
-		if (!user) {
-			e.preventDefault();
-			navigate('/auth');
-		}
-	};
 
 	return (
 		<div className="min-h-screen">
@@ -75,17 +64,6 @@ const Index = () => {
 						transition={{ duration: 0.8 }}
 						className="max-w-4xl mx-auto"
 					>
-						{username ? (
-							<motion.div
-								initial={{ opacity: 0, y: -20 }}
-								animate={{ opacity: 1, y: 0 }}
-								className="mb-4"
-							>
-								<span className="text-xl md:text-2xl font-medium text-primary">
-									Welcome {username}
-								</span>
-							</motion.div>
-						) : null}
 						<h1 className="text-hero mb-8">
 							Engineering Brilliance, <br />
 							<span className="text-primary">Made Visible.</span>
@@ -102,7 +80,7 @@ const Index = () => {
 						>
 							<div className="relative inline-block">
 								<GlowingEffect disabled={false} glow className="pointer-events-none rounded-md" />
-								<Link to="/contact" className="relative z-10 inline-block" onClick={handleAuthCheck}>
+								<Link to="/contact" className="relative z-10 inline-block">
 									<GradientButton className="group">
 										Deep tech, shown clearly
 										<ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
@@ -278,7 +256,6 @@ const Index = () => {
 								description={product.description}
 								href={product.href}
 								index={index}
-								onClick={handleAuthCheck}
 							/>
 						))}
 					</div>
@@ -338,7 +315,7 @@ const Index = () => {
 							</p>
 
 							<div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-								<Link to="/contact" onClick={handleAuthCheck}>
+								<Link to="/contact">
 									<Button
 										size="lg"
 										className="bg-primary text-primary-foreground hover:bg-primary/90 animate-glow-pulse"
