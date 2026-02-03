@@ -89,6 +89,13 @@ const portfolioData = [
 				description: 'This is a Tier 3 business catalogue website built for How Cute Is This, a Nairobi-based perfume store seeking a permanent online home for their products. The site features WhatsApp integration for direct customer communication, a responsive cart experience, and clean, high-quality styling that adapts seamlessly across devices.',
 				link: 'https://howcuteisthis.vercel.app/',
 			},
+			{
+				id: 'br2',
+				image: '/hskenya.png',
+				title: 'Horological Society of Kenya',
+				description: 'The Horological Society of Kenya presents a refined, invitation-only digital space dedicated to serious collectors of exceptional mechanical timepieces. The site reflects a business tier 4 website standard, combining editorial depth, private membership access, and a high-end visual identity rooted in precision and heritage. Every detail signals discretion, authority, and a curated approach to horology tailored for a discerning audience.',
+				link: 'https://hskenya.vercel.app/',
+			},
 		],
 	},
 ];
