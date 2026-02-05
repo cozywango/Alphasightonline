@@ -1,5 +1,17 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
+import type { IncomingMessage, ServerResponse } from 'http';
+
+// Inline types for Vercel serverless functions
+interface VercelRequest extends IncomingMessage {
+    query: Record<string, string | string[]>;
+    cookies: Record<string, string>;
+    body: any;
+}
+
+interface VercelResponse extends ServerResponse {
+    status: (statusCode: number) => VercelResponse;
+    json: (body: any) => void;
+}
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
