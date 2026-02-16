@@ -18,6 +18,7 @@ import Retainer from "./pages/services/Retainer";
 import ForCreators from './pages/ForCreators';
 import AuditPortfolio from './app/audit-portfolio/page';
 import HunterProgram from './pages/HunterProgram';
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <GoogleAnalytics />
         <div className="min-h-screen bg-background">
           <Navigation />
           <main className="pt-20">
