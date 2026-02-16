@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Clipboard } from 'lucide-react';
 import { AnimatedSection } from '@/components/AnimatedSection';
-import { Button } from '@/components/ui/button';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { Link } from 'react-router-dom';
 
 const Audit = () => {
@@ -25,26 +25,24 @@ const Audit = () => {
         </AnimatedSection>
 
         <AnimatedSection>
-          <div className="bg-card/30 backdrop-blur rounded-2xl border-[0.5px] border-border p-8">
+          <div className="glass-card glow-orange rounded-3xl p-8 md:p-10">
             <div className="flex items-start gap-6">
-              <div className="text-primary mt-1">
-                <Clipboard size={40} />
+              <div className="glow-badge shrink-0">
+                <Clipboard size={28} />
               </div>
               <div>
-                <div className="flex gap-4 mb-4">
-                  <div className="text-xs font-medium text-muted-foreground">Value Props</div>
-                </div>
+                <div className="text-xs font-mono tracking-wider text-primary/60 mb-4">VALUE PROPS</div>
 
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
-                  <div className="p-4 rounded-lg bg-background/10 border-[0.5px] border-border">
+                  <div className="glass-card p-4 rounded-xl">
                     <div className="font-semibold">Competitor Benchmarking</div>
                     <div className="text-sm text-muted-foreground mt-2">Snapshot vs. the top 1% in your niche.</div>
                   </div>
-                  <div className="p-4 rounded-lg bg-background/10 border-[0.5px] border-border">
+                  <div className="glass-card p-4 rounded-xl">
                     <div className="font-semibold">Logic Gap Analysis</div>
                     <div className="text-sm text-muted-foreground mt-2">Identify contraditions and weak claims in your narrative.</div>
                   </div>
-                  <div className="p-4 rounded-lg bg-background/10 border-[0.5px] border-border">
+                  <div className="glass-card p-4 rounded-xl">
                     <div className="font-semibold">Visual Health Score</div>
                     <div className="text-sm text-muted-foreground mt-2">A single metric for visual authority and trust.</div>
                   </div>
@@ -55,7 +53,7 @@ const Audit = () => {
                 </p>
 
                 <Link to="/contact">
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Request Audit</Button>
+                  <GradientButton>Request Audit</GradientButton>
                 </Link>
               </div>
             </div>

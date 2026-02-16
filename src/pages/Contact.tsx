@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { cn } from '@/lib/utils'; // Assuming cn exists or use clsx
+import { cn } from '@/lib/utils';
 
 const Contact = () => {
   const [searchParams] = useSearchParams();
@@ -77,9 +77,9 @@ const Contact = () => {
           <div className="text-center mb-12">
             <h1 className="text-hero mb-8">
               {activeTab === 'founder' ? (
-                <>Secure Your <span className="text-primary">Visual</span> Authority</>
+                <>Secure Your <span className="text-gradient-orange">Visual</span> Authority</>
               ) : (
-                <>Join The <span className="text-orange-500">Hunter</span> Protocol</>
+                <>Join The <span className="text-gradient-orange">Hunter</span> Protocol</>
               )}
             </h1>
             <p className="text-subtitle max-w-2xl mx-auto">
@@ -90,13 +90,12 @@ const Contact = () => {
           </div>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <AnimatedSection>
-            <div className="bg-card p-12 rounded-3xl border border-border">
-
+            <div className="glass-card rounded-3xl p-10 md:p-12">
               {/* Tabs */}
-              <div className="flex gap-4 mb-8 border-b border-border/50 pb-1">
+              <div className="flex gap-4 mb-8 border-b border-white/[0.06] pb-1">
                 <button
                   onClick={() => { setActiveTab('founder'); setSuccessMessage(null); setErrorMessage(null); }}
                   className={cn(
@@ -106,19 +105,19 @@ const Contact = () => {
                 >
                   Founder Inquiry
                   {activeTab === 'founder' && (
-                    <motion.div layoutId="contactTab" className="absolute bottom-[-5px] left-0 right-0 h-0.5 bg-primary" />
+                    <motion.div layoutId="contactTab" className="absolute bottom-[-5px] left-0 right-0 h-0.5 bg-primary" style={{ boxShadow: '0 0 8px rgba(255,138,0,0.4)' }} />
                   )}
                 </button>
                 <button
                   onClick={() => { setActiveTab('marketer'); setSuccessMessage(null); setErrorMessage(null); }}
                   className={cn(
                     "pb-3 text-lg font-bold transition-all duration-300 relative",
-                    activeTab === 'marketer' ? "text-orange-500" : "text-muted-foreground hover:text-foreground"
+                    activeTab === 'marketer' ? "text-[#0094ff]" : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   Hunter Application
                   {activeTab === 'marketer' && (
-                    <motion.div layoutId="contactTab" className="absolute bottom-[-5px] left-0 right-0 h-0.5 bg-orange-500" />
+                    <motion.div layoutId="contactTab" className="absolute bottom-[-5px] left-0 right-0 h-0.5 bg-[#0094ff]" style={{ boxShadow: '0 0 8px rgba(0,148,255,0.4)' }} />
                   )}
                 </button>
               </div>
@@ -140,7 +139,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="bg-background border-border"
+                      className="bg-background/50 border-white/[0.08] focus:border-primary/50"
                       placeholder={activeTab === 'founder' ? "Founder Name" : "Your Name"}
                     />
                   </div>
@@ -156,7 +155,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="bg-background border-border"
+                      className="bg-background/50 border-white/[0.08] focus:border-primary/50"
                       placeholder={activeTab === 'founder' ? "founder@company.com" : "you@email.com"}
                     />
                   </div>
@@ -172,7 +171,7 @@ const Contact = () => {
                     type="text"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="bg-background border-border"
+                    className="bg-background/50 border-white/[0.08] focus:border-primary/50"
                     placeholder={activeTab === 'founder' ? "URL to your current brand" : "URL to your LinkedIn or Portfolio"}
                   />
                 </div>
@@ -188,7 +187,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="bg-background border-border resize-none"
+                    className="bg-background/50 border-white/[0.08] focus:border-primary/50 resize-none"
                     placeholder={activeTab === 'founder'
                       ? "E.g., 'Our technology is great, but our deck is losing investors...'"
                       : "Briefly explain your network access and sales experience. Why should we give you a license?"}
@@ -196,12 +195,12 @@ const Contact = () => {
                 </div>
 
                 {successMessage && (
-                  <div className="mb-4 rounded-md bg-green-900/60 border border-green-700 p-3 text-sm text-green-200">
+                  <div className="mb-4 rounded-xl bg-green-900/30 border border-green-700/50 p-4 text-sm text-green-200">
                     {successMessage}
                   </div>
                 )}
                 {errorMessage && (
-                  <div className="mb-4 rounded-md bg-destructive/10 border border-destructive p-3 text-sm text-destructive-foreground">
+                  <div className="mb-4 rounded-xl bg-destructive/10 border border-destructive/50 p-4 text-sm text-destructive-foreground">
                     {errorMessage}
                   </div>
                 )}
@@ -211,11 +210,16 @@ const Contact = () => {
                   size="lg"
                   disabled={submitting}
                   className={cn(
-                    "w-full text-primary-foreground group transition-colors",
+                    "w-full text-white group transition-all duration-300",
                     activeTab === 'founder'
                       ? "bg-primary hover:bg-primary/90"
-                      : "bg-orange-500 hover:bg-orange-600"
+                      : "bg-[#0094ff] hover:bg-[#0080e0]"
                   )}
+                  style={{
+                    boxShadow: activeTab === 'founder'
+                      ? '0 0 20px rgba(255,138,0,0.15)'
+                      : '0 0 20px rgba(0,148,255,0.15)'
+                  }}
                 >
                   {submitting ? 'Sending...' : (activeTab === 'founder' ? 'Request Narrative Audit' : 'Submit Application')}
                   <Send className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
@@ -226,15 +230,15 @@ const Contact = () => {
 
           {/* Contact Information */}
           <AnimatedSection delay={0.2}>
-            <div className="space-y-12">
+            <div className="space-y-8">
               {/* Contact Details */}
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-12 rounded-3xl border border-border">
+              <div className="glass-card glow-orange rounded-3xl p-10 md:p-12">
                 <h3 className="text-2xl font-bold mb-8">Agency Direct</h3>
 
                 <div className="space-y-8">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary/20 p-3 rounded-xl">
-                      <Mail className="text-primary" size={24} />
+                    <div className="glow-badge w-12 h-12 shrink-0">
+                      <Mail size={20} />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Founder Direct</h4>
@@ -244,8 +248,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-accent/20 p-3 rounded-xl">
-                      <MapPin className="text-accent-foreground" size={24} />
+                    <div className="glow-badge-blue w-12 h-12 shrink-0">
+                      <MapPin size={20} />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Operations</h4>
@@ -257,7 +261,7 @@ const Contact = () => {
               </div>
 
               {/* Social Links */}
-              <div className="bg-card p-12 rounded-3xl border border-border">
+              <div className="glass-card rounded-3xl p-10 md:p-12">
                 <h3 className="text-2xl font-bold mb-8">Connect</h3>
 
                 <div className="space-y-4">
@@ -265,7 +269,7 @@ const Contact = () => {
                     href="https://x.com/alphasightke"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-4 rounded-xl bg-background border border-border hover:border-primary/50 transition-all duration-300 group"
+                    className="flex items-center space-x-4 p-4 rounded-xl glass-card group"
                   >
                     <Twitter className="text-primary group-hover:scale-110 transition-transform" size={24} />
                     <div>
@@ -278,9 +282,9 @@ const Contact = () => {
                     href="https://www.instagram.com/alphasightonline/?utm_source=ig_web_button_share_sheet"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-4 rounded-xl bg-background border border-border hover:border-primary/50 transition-all duration-300 group"
+                    className="flex items-center space-x-4 p-4 rounded-xl glass-card glass-card-blue group"
                   >
-                    <span className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" aria-hidden>
+                    <span className="w-6 h-6 text-[#0094ff] group-hover:scale-110 transition-transform" aria-hidden>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
                         <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10z" />
                         <path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zM17.5 6a.9.9 0 11-1.8 0 .9.9 0 011.8 0z" />
@@ -295,10 +299,10 @@ const Contact = () => {
               </div>
 
               {/* Response Time */}
-              <div className="bg-gradient-to-br from-accent/10 to-accent/5 p-8 rounded-2xl border border-border text-center">
+              <div className="glass-card glow-blue rounded-2xl p-8 text-center">
                 <h3 className="text-xl font-bold mb-3">Audit Turnaround</h3>
                 <p className="text-muted-foreground mb-2">Initial audit delivered within</p>
-                <p className="text-3xl font-bold text-primary">48 Hours</p>
+                <p className="text-3xl font-bold text-gradient-orange">48 Hours</p>
                 <p className="text-sm text-muted-foreground mt-2">For qualified Series A+ leads</p>
               </div>
             </div>
@@ -307,19 +311,19 @@ const Contact = () => {
 
         {/* Office Hours & Additional Info */}
         <AnimatedSection delay={0.4}>
-          <div className="mt-32 grid md:grid-cols-2 gap-8 justify-items-center">
+          <div className="mt-24 grid md:grid-cols-2 gap-8 justify-items-center">
             <div
-              className="text-center bg-card p-8 rounded-2xl border border-border max-w-md w-full cursor-pointer hover:border-orange-500/50 transition-colors"
+              className="text-center glass-card glass-card-blue p-8 rounded-2xl max-w-md w-full cursor-pointer"
               onClick={() => setActiveTab('marketer')}
             >
-              <h3 className="text-xl font-bold mb-4 text-orange-500">Marketers</h3>
+              <h3 className="text-xl font-bold mb-4 text-[#0094ff]">Marketers</h3>
               <p className="text-muted-foreground">
                 Apply for our "Hunter" program. Commission only, high-ticket payouts.
               </p>
             </div>
 
             <div
-              className="text-center bg-card p-8 rounded-2xl border border-border max-w-md w-full cursor-pointer hover:border-primary/50 transition-colors"
+              className="text-center glass-card p-8 rounded-2xl max-w-md w-full cursor-pointer"
               onClick={() => setActiveTab('founder')}
             >
               <h3 className="text-xl font-bold mb-4 text-primary">Founders</h3>

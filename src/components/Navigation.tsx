@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { GradientButton } from '@/components/ui/gradient-button';
-import { GlowingEffect } from '@/components/ui/glowing-effect';
 
 export const Navigation = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -18,52 +17,35 @@ export const Navigation = () => {
 	];
 
 	return (
-		<nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+		<nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-white/[0.06]"
+			style={{ boxShadow: '0 1px 20px rgba(255, 138, 0, 0.03)' }}
+		>
 			<div className="container mx-auto px-6">
 				<div className="flex items-center justify-between h-20">
 					{/* Logo */}
-					<div className="relative inline-flex items-center gap-3">
-						<GlowingEffect
-							disabled={false}
-							glow
-							className="pointer-events-none rounded-md"
+					<Link
+						to="/"
+						className="flex items-center text-2xl font-bold"
+					>
+						<img
+							src="/logo.png"
+							alt="Alphasight Online logo"
+							className="h-8 w-auto mr-3"
 						/>
-						<Link
-							to="/"
-							style={{ transform: 'none' }}
-							className="flex items-center text-2xl font-bold relative z-10 px-1 !transform-none hover:!scale-100 focus:!scale-100 active:!scale-100"
-						>
-							<img
-								src="/logo.png"
-								alt="Alphasight Online logo"
-								className="h-8 w-auto mr-3"
-							/>
-							<span className="text-primary">Alphasight</span>
-							<span className="text-foreground ml-1">Online</span>
-						</Link>
-					</div>
+						<span className="text-gradient-orange">Alphasight</span>
+						<span className="text-foreground ml-1">Online</span>
+					</Link>
 
 					{/* Desktop Navigation */}
 					<div className="hidden md:flex items-center space-x-8">
 						{navItems.map((item) => (
-							<div
+							<Link
 								key={item.href}
-								className="relative inline-block !transform-none"
-								style={{ transform: 'none' }}
+								to={item.href}
+								className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm font-medium"
 							>
-								<GlowingEffect
-									disabled={false}
-									glow
-									className="pointer-events-none rounded-md"
-								/>
-								<Link
-									to={item.href}
-									style={{ transform: 'none' }}
-									className="text-muted-foreground transition-colors duration-300 font-medium relative z-10 px-1 hover:!text-muted-foreground hover:bg-transparent focus:bg-transparent hover:!scale-100 focus:!scale-100 active:!scale-100 !transform-none"
-								>
-									{item.label}
-								</Link>
-							</div>
+								{item.label}
+							</Link>
 						))}
 						<Link to="/audit-portfolio">
 							<GradientButton size="sm" className="w-fit">Audit Portfolio</GradientButton>
@@ -72,7 +54,7 @@ export const Navigation = () => {
 
 					{/* Mobile Menu Toggle */}
 					<button
-						className="md:hidden p-2"
+						className="md:hidden p-2 text-muted-foreground hover:text-foreground"
 						onClick={() => setIsOpen(!isOpen)}
 					>
 						{isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -85,29 +67,18 @@ export const Navigation = () => {
 						initial={{ opacity: 0, y: -20 }}
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -20 }}
-						className="md:hidden py-6 border-t border-border"
+						className="md:hidden py-6 border-t border-white/[0.06]"
 					>
 						<div className="flex flex-col space-y-4">
 							{navItems.map((item) => (
-								<div
+								<Link
 									key={item.href}
-									className="relative !transform-none"
-									style={{ transform: 'none' }}
+									to={item.href}
+									className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium py-1"
+									onClick={() => setIsOpen(false)}
 								>
-									<GlowingEffect
-										disabled={false}
-										glow
-										className="pointer-events-none rounded-md"
-									/>
-									<Link
-										to={item.href}
-										style={{ transform: 'none' }}
-										className="text-muted-foreground transition-colors duration-300 font-medium relative z-10 hover:!text-muted-foreground hover:bg-transparent focus:bg-transparent hover:!scale-100 focus:!scale-100 active:!scale-100 !transform-none"
-										onClick={() => setIsOpen(false)}
-									>
-										{item.label}
-									</Link>
-								</div>
+									{item.label}
+								</Link>
 							))}
 							<Link to="/audit-portfolio" onClick={() => setIsOpen(false)}>
 								<GradientButton size="sm" className="w-fit">Audit Portfolio</GradientButton>

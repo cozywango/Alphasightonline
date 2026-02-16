@@ -60,12 +60,12 @@ const Protocol = () => {
     {
       id: "03",
       title: "Visual Synthesis",
-      icon: <Aperture className="text-primary" size={32} />,
+      icon: <Aperture className="text-[#0094ff]" size={32} />,
       description: "We create visuals built for concepts that lack physical form.",
       detail: (
         <div className="space-y-4">
           <div>
-            <span className="text-primary/80">Using generative and custom visual systems, we produce:</span>
+            <span className="text-[#0094ff]/80">Using generative and custom visual systems, we produce:</span>
             <ul className="list-disc list-inside pl-2 mt-1 space-y-1">
               <li>Abstract technical imagery</li>
               <li>System-level representations</li>
@@ -79,12 +79,12 @@ const Protocol = () => {
     {
       id: "04",
       title: "Design Refinement",
-      icon: <Cpu className="text-primary" size={32} />,
+      icon: <Cpu className="text-[#0094ff]" size={32} />,
       description: "Automation stops before credibility breaks.",
       detail: (
         <div className="space-y-4">
           <div>
-            <span className="text-primary/80">Every asset passes through a manual design process:</span>
+            <span className="text-[#0094ff]/80">Every asset passes through a manual design process:</span>
             <ul className="list-disc list-inside pl-2 mt-1 space-y-1">
               <li>Typography refinement</li>
               <li>Color grading</li>
@@ -106,7 +106,7 @@ const Protocol = () => {
         <AnimatedSection>
           <div className="text-center mb-20">
             <h1 className="text-hero mb-6">
-              The Alphasight Online <span className="text-primary">Protocol</span>
+              The Alphasight Online <span className="text-gradient-orange">Protocol</span>
             </h1>
             <p className="text-subtitle max-w-3xl mx-auto mb-8">
               A structured workflow that converts technical material into investor-grade visual assets.
@@ -120,7 +120,7 @@ const Protocol = () => {
         {/* Workflow Steps */}
         <section className="mb-24">
           <AnimatedSection>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {steps.map((step, index) => (
                 <motion.div
                   key={step.id}
@@ -128,16 +128,16 @@ const Protocol = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.4 }}
-                  className="bg-card/40 backdrop-blur rounded-2xl border-[0.5px] border-border p-8 h-full"
+                  className={`glass-card ${index >= 2 ? 'glass-card-blue' : ''} rounded-2xl p-8 h-full`}
                 >
                   <div className="flex flex-col h-full">
                     <div className="flex items-center justify-between mb-6">
                       <div className="flex items-center gap-4">
-                        <div className="bg-primary/10 p-3 rounded-xl text-primary">
+                        <div className={index < 2 ? 'glow-badge' : 'glow-badge-blue'}>
                           {step.icon}
                         </div>
                         <div>
-                          <div className="text-xs font-mono tracking-widest text-primary/60 mb-1">PHASE {step.id}</div>
+                          <div className={`text-xs font-mono tracking-widest mb-1 ${index < 2 ? 'text-primary/60' : 'text-[#0094ff]/60'}`}>PHASE {step.id}</div>
                           <h3 className="text-xl font-bold">{step.title}</h3>
                         </div>
                       </div>
@@ -158,9 +158,9 @@ const Protocol = () => {
         {/* The Deliverables */}
         <section className="mb-24">
           <AnimatedSection>
-            <div className="bg-card/20 backdrop-blur rounded-3xl border-[0.5px] border-border p-12">
+            <div className="glass-card rounded-3xl p-12">
               <div className="text-center mb-16">
-                <h2 className="text-section mb-4">The Output</h2>
+                <h2 className="bracket-title mb-4">The Output</h2>
                 <p className="text-xl text-muted-foreground">
                   Deployment-ready assets built for investor scrutiny.
                 </p>
@@ -168,8 +168,8 @@ const Protocol = () => {
 
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-lg font-bold text-primary">
-                    <Layers size={24} />
+                  <div className="flex items-center gap-3 text-lg font-bold text-gradient-orange">
+                    <Layers size={24} className="text-primary" />
                     <span>Narrative Carousel</span>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
@@ -179,8 +179,8 @@ const Protocol = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-lg font-bold text-primary">
-                    <Aperture size={24} />
+                  <div className="flex items-center gap-3 text-lg font-bold text-gradient-orange">
+                    <Aperture size={24} className="text-primary" />
                     <span>Technical Loop</span>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
@@ -190,8 +190,8 @@ const Protocol = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-lg font-bold text-primary">
-                    <Scan size={24} />
+                  <div className="flex items-center gap-3 text-lg font-bold text-gradient-blue">
+                    <Scan size={24} className="text-[#0094ff]" />
                     <span>Visual Audit</span>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
@@ -209,20 +209,25 @@ const Protocol = () => {
         {/* CTA Section */}
         <section className="mb-16">
           <AnimatedSection>
-            <div className="text-center bg-gradient-to-br from-primary/5 via-card/40 to-accent/5 backdrop-blur p-16 rounded-3xl border-[0.5px] border-border">
-              <h2 className="text-3xl font-bold mb-4">Deployment</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                The Alphasight Online Protocol runs on limited capacity. We cap active engagements to protect quality.
-                <br /><span className="text-primary font-medium">First-come. Carefully selected.</span>
-              </p>
+            <div className="text-center glass-card glow-orange rounded-3xl p-16 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(circle,_rgba(255,138,0,0.06)_0%,_transparent_70%)] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[radial-gradient(circle,_rgba(0,148,255,0.05)_0%,_transparent_70%)] pointer-events-none" />
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link to="/contact">
-                  <GradientButton className="min-w-[200px] h-12 text-base">Initiate Protocol</GradientButton>
-                </Link>
-                <Link to="/audit-portfolio">
-                  <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">See Case Studies</Button>
-                </Link>
+              <div className="relative z-10">
+                <h2 className="text-3xl font-bold mb-4">Deployment</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+                  The Alphasight Online Protocol runs on limited capacity. We cap active engagements to protect quality.
+                  <br /><span className="text-gradient-orange font-medium">First-come. Carefully selected.</span>
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <Link to="/contact">
+                    <GradientButton className="min-w-[200px] h-12 text-base">Initiate Protocol</GradientButton>
+                  </Link>
+                  <Link to="/audit-portfolio">
+                    <Button variant="outline" size="lg" className="border-[#0094ff]/50 text-[#0094ff] hover:bg-[#0094ff]/10 hover:text-[#0094ff]">See Case Studies</Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </AnimatedSection>

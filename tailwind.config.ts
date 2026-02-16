@@ -28,7 +28,7 @@ export default {
 				'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate'
 			},
 			fontFamily: {
-				sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
+				sans: ['Inter', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -112,6 +112,14 @@ export default {
 				'glow-pulse': {
 					'0%': { boxShadow: '0 0 20px hsl(24 100% 50% / 0.3)' },
 					'100%': { boxShadow: '0 0 40px hsl(24 100% 50% / 0.6)' }
+				},
+				'fade-in-down': {
+					from: { opacity: '0', transform: 'translateY(-20px)' },
+					to: { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-in-up': {
+					from: { opacity: '0', transform: 'translateY(30px)' },
+					to: { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 		}

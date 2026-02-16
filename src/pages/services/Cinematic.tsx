@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Aperture } from 'lucide-react';
 import { AnimatedSection } from '@/components/AnimatedSection';
-import { Button } from '@/components/ui/button';
+import { GradientButton } from '@/components/ui/gradient-button';
 import { Link } from 'react-router-dom';
 
 const Cinematic = () => {
@@ -11,29 +11,29 @@ const Cinematic = () => {
         <AnimatedSection>
           <div className="text-center mb-12">
             <motion.h1 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }} className="text-hero mb-4">
-              Cinematic <span className="text-primary">Loops</span>
+              Cinematic <span className="text-gradient-orange">Loops</span>
             </motion.h1>
             <p className="text-subtitle max-w-3xl mx-auto">Technical Visualization for hardware and deep-tech concepts.</p>
           </div>
         </AnimatedSection>
 
         <AnimatedSection>
-          <div className="bg-card/30 backdrop-blur rounded-2xl border-[0.5px] border-border p-8">
+          <div className="glass-card glow-blue rounded-3xl p-8 md:p-10">
             <div className="flex items-start gap-6">
-              <div className="text-primary mt-1"><Aperture size={40} /></div>
+              <div className="glow-badge-blue shrink-0"><Aperture size={28} /></div>
               <div>
-                <div className="flex gap-4 mb-4"><div className="text-xs font-medium text-muted-foreground">Value Props</div></div>
+                <div className="text-xs font-mono tracking-wider text-[#0094ff]/60 mb-4">VALUE PROPS</div>
 
                 <div className="grid md:grid-cols-3 gap-4 mb-6">
-                  <div className="p-4 rounded-lg bg-background/10 border-[0.5px] border-border">
+                  <div className="glass-card p-4 rounded-xl">
                     <div className="font-semibold">Realistic Aesthetics</div>
                     <div className="text-sm text-muted-foreground mt-2">Cinematic lighting & material detail.</div>
                   </div>
-                  <div className="p-4 rounded-lg bg-background/10 border-[0.5px] border-border">
+                  <div className="glass-card p-4 rounded-xl">
                     <div className="font-semibold">Seamless Looping</div>
                     <div className="text-sm text-muted-foreground mt-2">Perfectly tileable motion for social formats.</div>
                   </div>
-                  <div className="p-4 rounded-lg bg-background/10 border-[0.5px] border-border">
+                  <div className="glass-card p-4 rounded-xl">
                     <div className="font-semibold">Abstract Industrialism</div>
                     <div className="text-sm text-muted-foreground mt-2">High-level visual metaphors for complex tech.</div>
                   </div>
@@ -41,7 +41,7 @@ const Cinematic = () => {
 
                 <p className="text-muted-foreground leading-relaxed mb-6">Static images look cheap. We generate high-end, moving visualizations of your technology—whether it's a carbon capture facility or a quantum processor. These assets scream 'High Valuation' before you say a word.</p>
 
-                <Link to="/contact"><Button className="bg-primary text-primary-foreground hover:bg-primary/90">Visualize Tech</Button></Link>
+                <Link to="/contact"><GradientButton>Visualize Tech</GradientButton></Link>
               </div>
             </div>
           </div>
