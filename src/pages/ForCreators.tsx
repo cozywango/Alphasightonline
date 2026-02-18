@@ -1,37 +1,40 @@
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { GradientButton } from '@/components/ui/gradient-button';
-import ProductInquiryModal from '@/components/ProductInquiryModal';
+import OrderModal from '@/components/OrderModal';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const ForCreators = () => {
-  const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
+  const [selectedTier, setSelectedTier] = useState<{ tierName: string; basePrice: number; hostingLabel: string; tierId: string } | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleApply = (productName: string) => {
-    setSelectedProduct(productName);
+  const handleApply = (tierName: string, basePrice: number, hostingLabel: string, tierId: string) => {
+    setSelectedTier({ tierName, basePrice, hostingLabel, tierId });
     setIsModalOpen(true);
   };
 
   const creatorTiers = [
-    { name: 'Tier One. Bio-Link', desc: 'Single long-scroll page', price: '$80 - $150', features: ['Bio and social links', 'One featured image or video', 'Contact button'], hosting: false, product: 'Creator Tier 1' },
-    { name: 'Tier Two. Portfolio', desc: 'Home, About, and Work pages', price: '$170 - $270', features: ['Ten-item gallery', 'Downloadable CV or media kit', 'Mobile optimized'], hosting: false, product: 'Creator Tier 2' },
-    { name: 'Tier Three. Content Hub', desc: 'Home plus blog or newsletter', price: '$290 - $390', features: ['Dynamic content feed', 'Email capture', 'Mobile and desktop optimized'], hosting: true, product: 'Creator Tier 3' },
-    { name: 'Tier Four. Icon', desc: 'Five-page personal site', price: '$400+', features: ['Motion effects', 'Press and media section', 'Custom domain setup'], hosting: true, product: 'Creator Tier 4' },
+    { name: 'Tier One. Bio-Link', desc: 'Single long-scroll page', price: '$250', basePrice: 250, tierId: 'bio-link', features: ['Bio and social links', 'One featured image or video', 'Contact button'], hosting: false, hostingLabel: '', product: 'Creator Tier 1' },
+    { name: 'Tier Two. Portfolio', desc: 'Home, About, and Work pages', price: '$750', basePrice: 750, tierId: 'portfolio', features: ['Ten-item gallery', 'Downloadable CV or media kit', 'Mobile optimized'], hosting: false, hostingLabel: '', product: 'Creator Tier 2' },
+    { name: 'Tier Three. Content Hub', desc: 'Home plus blog or newsletter', price: '$1,350', basePrice: 1350, tierId: 'content-hub', features: ['Dynamic content feed', 'Email capture', 'Mobile and desktop optimized'], hosting: true, hostingLabel: '+ $25/mo Hosting', product: 'Creator Tier 3' },
+    { name: 'Tier Four. Icon', desc: 'Five-page personal site', price: '$2,200', basePrice: 2200, tierId: 'icon', features: ['Motion effects', 'Press and media section', 'Custom domain setup'], hosting: true, hostingLabel: '', product: 'Creator Tier 4' },
   ];
 
   const businessTiers = [
-    { name: 'Tier One. The Card', desc: 'Single landing page', price: '$120 - $220', features: ['Business details and map', 'WhatsApp contact button', 'Hero image'], hosting: false, product: 'Business Tier 1' },
-    { name: 'Tier Two. The Catalog', desc: 'Product gallery up to twenty items', price: '$250 - $350', features: ['Categorized layouts', 'Product detail pop-ups', 'Direct-to-message buttons'], hosting: false, product: 'Business Tier 2' },
-    { name: 'Tier Three. The Firm', desc: 'Service menus and pricing', price: '$380 - $480', features: ['Team profiles & Client testimonials', 'Booking link integration', 'Mobile and desktop optimized'], hosting: true, product: 'Business Tier 3' },
-    { name: 'Tier Four. Enterprise Lite', desc: 'Multi-page structure', price: '$800+', features: ['Advanced motion visuals', 'Case studies', 'Competitor visual audit'], hosting: true, product: 'Business Tier 4' },
+    { name: 'Tier One. The Card', desc: 'Single landing page', price: '$300', basePrice: 300, tierId: 'the-card', features: ['Business details and map', 'WhatsApp contact button', 'Hero image'], hosting: false, hostingLabel: '', product: 'Business Tier 1' },
+    { name: 'Tier Two. The Catalog', desc: 'Product gallery up to twenty items', price: '$1,800', basePrice: 1800, tierId: 'the-catalog', features: ['Categorized layouts', 'Product detail pop-ups', 'Direct-to-message buttons'], hosting: false, hostingLabel: '', product: 'Business Tier 2' },
+    { name: 'Tier Three. The Firm', desc: 'Service menus and pricing', price: '$2,400', basePrice: 2400, tierId: 'the-firm', features: ['Team profiles & Client testimonials', 'Booking link integration', 'Mobile and desktop optimized'], hosting: true, hostingLabel: '', product: 'Business Tier 3' },
+    { name: 'Tier Four. Enterprise Lite', desc: 'Multi-page structure', price: '$4,500', basePrice: 4500, tierId: 'enterprise-lite', features: ['Advanced motion visuals', 'Case studies', 'Competitor visual audit'], hosting: true, hostingLabel: '', product: 'Business Tier 4' },
   ];
 
   return (
     <div className="min-h-screen py-16">
-      <ProductInquiryModal
-        productName={selectedProduct}
+      <OrderModal
+        tierName={selectedTier?.tierName ?? ''}
+        basePrice={selectedTier?.basePrice ?? 0}
+        hostingLabel={selectedTier?.hostingLabel}
+        tierId={selectedTier?.tierId ?? ''}
         isOpen={isModalOpen}
         onOpenChange={setIsModalOpen}
       />
@@ -127,7 +130,12 @@ const ForCreators = () => {
                       <h3 className="text-xl font-bold">{tier.name}</h3>
                       <p className="text-sm text-muted-foreground">{tier.desc}</p>
                     </div>
-                    <span className="text-xl font-bold text-gradient-orange">{tier.price}</span>
+                    <div className="text-right">
+                      <span className="text-xl font-bold text-gradient-orange font-mono">{tier.price}</span>
+                      {tier.hostingLabel && (
+                        <div className="text-xs text-primary/60 font-mono mt-1">{tier.hostingLabel}</div>
+                      )}
+                    </div>
                   </div>
                   <ul className="space-y-2 text-sm text-muted-foreground mb-8">
                     {tier.features.map((f, j) => (
@@ -137,7 +145,7 @@ const ForCreators = () => {
                       • Hosting {tier.hosting ? 'included' : 'not included'}
                     </li>
                   </ul>
-                  <div onClick={() => handleApply(tier.product)}>
+                  <div onClick={() => handleApply(tier.name, tier.basePrice, tier.hostingLabel, tier.tierId)}>
                     <GradientButton className="w-full">Interested</GradientButton>
                   </div>
                 </motion.div>
@@ -169,7 +177,12 @@ const ForCreators = () => {
                       <h3 className="text-xl font-bold">{tier.name}</h3>
                       <p className="text-sm text-muted-foreground">{tier.desc}</p>
                     </div>
-                    <span className="text-xl font-bold text-gradient-blue">{tier.price}</span>
+                    <div className="text-right">
+                      <span className="text-xl font-bold text-gradient-blue font-mono">{tier.price}</span>
+                      {tier.hostingLabel && (
+                        <div className="text-xs text-[#0094ff]/60 font-mono mt-1">{tier.hostingLabel}</div>
+                      )}
+                    </div>
                   </div>
                   <ul className="space-y-2 text-sm text-muted-foreground mb-8">
                     {tier.features.map((f, j) => (
@@ -179,7 +192,7 @@ const ForCreators = () => {
                       • Hosting {tier.hosting ? 'included' : 'not included'}
                     </li>
                   </ul>
-                  <div onClick={() => handleApply(tier.product)}>
+                  <div onClick={() => handleApply(tier.name, tier.basePrice, tier.hostingLabel, tier.tierId)}>
                     <GradientButton className="w-full">Interested</GradientButton>
                   </div>
                 </motion.div>
