@@ -149,17 +149,17 @@ const Index = () => {
         <div className="relative z-10 md:col-start-2 md:col-end-8 hidden lg:flex items-center justify-center h-full">
           <div className="grid grid-cols-2 gap-6 w-full max-w-2xl relative">
             <div className="parallax-card cyber-glass rounded-2xl overflow-hidden group col-span-1 row-span-2 relative h-[500px] z-10 self-center" data-speed="0.7">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" alt="Technical Vision" className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
+              <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&q=80&w=1000" alt="Technical Vision" className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
             </div>
             
             <div className="flex flex-col gap-6 justify-center">
               <div className="parallax-card cyber-glass rounded-2xl overflow-hidden group h-[240px] relative z-10" data-speed="1.1">
-                <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=1000" alt="Design Architecture" className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1000" alt="Design Architecture" className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
               </div>
               <div className="parallax-card cyber-glass rounded-2xl overflow-hidden group h-[240px] relative z-10" data-speed="1.4">
-                <img src="https://images.unsplash.com/photo-1531297172867-6cd85f470a7b?auto=format&fit=crop&q=80&w=1000" alt="Code Implementation" className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
+                <img src="https://images.unsplash.com/photo-1662018108387-b5d8c9b5834c?auto=format&fit=crop&q=80&w=1000" alt="Code Implementation" className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
               </div>
             </div>
