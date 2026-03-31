@@ -30,6 +30,9 @@
     --secondary: 205 100% 50%;
     --secondary-foreground: 0 0% 98%;
 
+    --primary-orange: 24 100% 50%;
+    --primary-blue: 210 100% 50%;
+
     /* Muted */
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
@@ -120,6 +123,10 @@
   .text-subtitle {
     @apply text-xl md:text-2xl font-medium leading-relaxed text-muted-foreground;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight leading-tight;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -128,32 +135,22 @@
 
 @layer components {
   .glass-card {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.03) 0%,
-      rgba(255, 255, 255, 0.01) 100%
-    );
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    @apply cyber-glass;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-card:hover {
-    border-color: rgba(255, 138, 0, 0.2);
-    box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.4),
-      0 0 20px rgba(255, 138, 0, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    border-color: hsl(var(--primary-orange) / 0.3);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.6),
+      0 0 20px hsl(var(--primary-orange) / 0.1);
   }
 
   .glass-card-blue:hover {
-    border-color: rgba(0, 148, 255, 0.2);
-    box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.4),
-      0 0 20px rgba(0, 148, 255, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    border-color: hsl(var(--primary-blue) / 0.3);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.6),
+      0 0 20px hsl(var(--primary-blue) / 0.1);
   }
 
   /* Glow border utilities */
@@ -211,19 +208,15 @@
 
   /* Glowing number badge */
   .glow-badge {
-    @apply w-16 h-16 rounded-2xl flex items-center justify-center text-xl font-bold;
-    background: linear-gradient(135deg, rgba(255, 138, 0, 0.15), rgba(255, 78, 0, 0.08));
-    border: 1px solid rgba(255, 138, 0, 0.25);
-    box-shadow: 0 0 20px rgba(255, 138, 0, 0.1);
-    color: #ff8a00;
+    @apply cyber-glass-strong w-16 h-16 rounded-2xl flex items-center justify-center text-xl font-bold;
+    color: hsl(var(--primary-orange));
+    border-color: hsl(var(--primary-orange) / 0.3);
   }
 
   .glow-badge-blue {
-    @apply w-16 h-16 rounded-2xl flex items-center justify-center text-xl font-bold;
-    background: linear-gradient(135deg, rgba(0, 148, 255, 0.15), rgba(0, 210, 255, 0.08));
-    border: 1px solid rgba(0, 148, 255, 0.25);
-    box-shadow: 0 0 20px rgba(0, 148, 255, 0.1);
-    color: #0094ff;
+    @apply cyber-glass-strong w-16 h-16 rounded-2xl flex items-center justify-center text-xl font-bold;
+    color: hsl(var(--primary-blue));
+    border-color: hsl(var(--primary-blue) / 0.3);
   }
 
   /* Section bracket titles (like in the reference) */
@@ -239,6 +232,58 @@
   .bracket-title::after {
     content: " ]";
     @apply text-muted-foreground/50;
+  }
+
+  /* Futuristic Cyber Glass effects */
+  .cyber-glass {
+    background: rgba(10, 10, 12, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow:
+      0 4px 24px -1px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+  }
+
+  /* Subtle glowing edge effect using Alphasight colors */
+  .cyber-glass::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      hsl(var(--primary-blue) / 0.3) 20%,
+      hsl(var(--primary-orange) / 0.3) 80%,
+      transparent 100%);
+    z-index: 1;
+  }
+
+  .cyber-glass-strong {
+    background: rgba(15, 15, 20, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 8px 32px -4px rgba(0, 0, 0, 0.6),
+      inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+  }
+
+  .cyber-glass-strong::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      hsl(var(--primary-blue) / 0.5) 20%,
+      hsl(var(--primary-orange) / 0.5) 80%,
+      transparent 100%);
+    z-index: 1;
   }
 }
 

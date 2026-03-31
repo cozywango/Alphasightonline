@@ -49,7 +49,7 @@ const Audit = () => {
                 </div>
 
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Most founders think their deck is fine. We prove it isn't. We analyze your last 10 posts and your pitch deck against the top 1% of your niche. We deliver a brutal, honest report on where you are leaking authority.
+                  Most founders think their website is fine. We prove it isn't. We analyze your 10 competitors Visual Space and your Website against the top 1% of your niche. We deliver a brutal, honest report on where you are leaking authority.
                 </p>
 
                 <Link to="/contact">

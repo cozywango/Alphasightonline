@@ -54,98 +54,131 @@ const ForCreators = () => {
           </div>
         </AnimatedSection>
 
-        {/* What We Believe */}
-        <AnimatedSection>
-          <div className="glass-card rounded-3xl p-10 mb-16">
-            <h2 className="bracket-title mb-6">What We Believe</h2>
-            <div className="text-lg text-muted-foreground leading-relaxed space-y-4 mb-8">
-              <p>Social platforms do not belong to you.<br />Algorithms change. Reach disappears.</p>
-              <p className="text-gradient-orange font-semibold text-xl">A website is permanent.</p>
-              <p>Alphasight Online builds owned digital assets designed to outlast platforms and trends.</p>
-              <p>We do not use generic templates. We apply the same visual psychology used in venture-backed deep-tech companies, adapted for creators and businesses.</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 mt-12">
-              {[
-                { title: 'Speed', desc: 'Sites delivered in days, not months.' },
-                { title: 'Polish', desc: 'Enterprise-grade design built to signal credibility.' },
-                { title: 'Simplicity', desc: 'Frontend-only architecture. No plugins. No fragile systems.' },
-              ].map((item, i) => (
-                <div key={i} className={`glass-card ${i === 1 ? 'glass-card-blue' : ''} p-6 rounded-xl`}>
-                  <h3 className="font-bold text-lg mb-2 text-foreground">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Catalog Mode Standard */}
-        <AnimatedSection>
-          <div className="mb-24 text-center max-w-4xl mx-auto">
-            <h2 className="bracket-title mb-6">The Catalog-Mode Standard</h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              We do not build shopping carts. <span className="text-gradient-orange font-medium">We build showcases.</span>
-            </p>
-            <p className="text-muted-foreground mb-12">
-              Your site creates desire. You close sales through WhatsApp, direct messages, or external payment links.
-              This keeps everything fast, reliable, and maintenance-free.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6 text-left">
-              {[
-                { title: 'Zero transaction fees', desc: 'We never touch your revenue.' },
-                { title: 'Visual-first', desc: 'Your work appears like a curated gallery, not a storefront.' },
-                { title: 'Mobile-native', desc: 'Designed for link-in-bio traffic and small screens first.' },
-              ].map((item, i) => (
-                <div key={i} className="glass-card p-6 rounded-2xl">
-                  <h4 className="font-bold text-primary mb-2">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Creator Series Pricing */}
+        {/* What We Believe - BENTO UI */}
         <AnimatedSection>
           <div className="mb-24">
-            <div className="text-center mb-10">
+            <h2 className="bracket-title mb-10 text-center">What We Believe</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
+              {/* Large highlighted belief card */}
+              <div className="md:col-span-2 glass-card rounded-3xl p-10 group hover:scale-[1.01] transition-transform duration-500 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-x-0 -top-px h-px w-full bg-gradient-to-r from-transparent via-primary-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="relative z-10 text-lg text-muted-foreground leading-relaxed space-y-4">
+                  <p>Social platforms do not belong to you.<br />Algorithms change. Reach disappears.</p>
+                  <p className="text-gradient-orange font-semibold text-2xl">A website is permanent.</p>
+                  <p>Alphasight Online builds owned digital assets designed to outlast platforms and trends.</p>
+                </div>
+              </div>
+              
+              {/* Focus point card */}
+              <div className="glass-card rounded-3xl p-10 group hover:scale-[1.02] transition-transform duration-500 relative overflow-hidden flex items-center justify-center text-center">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <p className="text-muted-foreground leading-relaxed">We do not use generic templates. We apply the same visual psychology used in venture-backed deep-tech companies, adapted for creators and businesses.</p>
+                </div>
+              </div>
+
+              {/* Stats/Pillars cards */}
+              {[
+                { title: 'Speed', desc: 'Sites delivered in days, not months.', glow: 'orange' },
+                { title: 'Polish', desc: 'Enterprise-grade design built to signal credibility.', glow: 'blue' },
+                { title: 'Simplicity', desc: 'Frontend-only architecture. No plugins. No fragile systems.', glow: 'orange' },
+              ].map((item, i) => (
+                <div key={i} className={`glass-card p-8 rounded-2xl group hover:scale-[1.02] transition-transform duration-500 relative overflow-hidden`}>
+                  <div className={`absolute inset-0 bg-gradient-to-t from-primary-${item.glow}/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                  <div className={`absolute -inset-[-1px] rounded-2xl border border-transparent group-hover:border-primary-${item.glow}/30 transition-colors duration-500 pointer-events-none`} />
+                  <div className="relative z-10">
+                    <h3 className="font-bold text-xl mb-3 text-foreground">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Catalog Mode Standard - BENTO UI */}
+        <AnimatedSection>
+          <div className="mb-24 max-w-5xl mx-auto">
+            <h2 className="bracket-title mb-10 text-center">The Catalog-Mode Standard</h2>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+              <div className="md:col-span-3 glass-card rounded-3xl p-10 group hover:scale-[1.01] transition-all duration-500 relative overflow-hidden flex flex-col justify-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <p className="text-2xl text-muted-foreground mb-6">
+                  We do not build shopping carts. <span className="text-gradient-orange font-medium">We build showcases.</span>
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Your site creates desire. You close sales through WhatsApp, direct messages, or external payment links.
+                  This keeps everything fast, reliable, and maintenance-free.
+                </p>
+              </div>
+
+              <div className="md:col-span-2 flex flex-col gap-6">
+                {[
+                  { title: 'Zero transaction fees', desc: 'We never touch your revenue.' },
+                  { title: 'Visual-first', desc: 'Your work appears like a curated gallery, not a storefront.' },
+                  { title: 'Mobile-native', desc: 'Designed for link-in-bio traffic and small screens first.' },
+                ].map((item, i) => (
+                  <div key={i} className={`glass-card p-6 rounded-2xl group hover:scale-[1.02] transition-transform duration-500 relative overflow-hidden flex-1 flex flex-col justify-center`}>
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-orange via-primary-blue to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative z-10 pl-2">
+                      <h4 className="font-bold text-foreground mb-1">{item.title}</h4>
+                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Creator Series Pricing - BENTO UI */}
+        <AnimatedSection>
+          <div className="mb-24">
+            <div className="text-center mb-12">
               <h2 className="bracket-title mb-4">Creator Series</h2>
               <p className="text-muted-foreground">Built for creators, influencers, artists, and personal brands.</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
               {creatorTiers.map((tier, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.4 }}
-                  className="glass-card rounded-2xl p-8 group hover:border-primary/30 transition-all"
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  className={`glass-card rounded-3xl p-8 group hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(255,138,0,0.15)] transition-all duration-500 relative flex flex-col justify-between ${i === 3 ? 'lg:col-span-2 lg:row-span-2 bg-gradient-to-b from-background to-primary-orange/5' : ''}`}
                 >
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold">{tier.name}</h3>
+                  <div className="absolute inset-x-0 -top-px h-px w-full bg-gradient-to-r from-transparent via-primary-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  
+                  <div>
+                    <div className="flex flex-col mb-8">
+                      <h3 className={`font-bold mb-2 ${i === 3 ? 'text-3xl' : 'text-xl'}`}>{tier.name}</h3>
                       <p className="text-sm text-muted-foreground">{tier.desc}</p>
                     </div>
-                    <div className="text-right">
-                      <span className="text-xl font-bold text-gradient-orange font-mono">{tier.price}</span>
+                    
+                    <div className="mb-8">
+                      <span className={`font-bold text-gradient-orange font-mono ${i === 3 ? 'text-5xl' : 'text-3xl'}`}>{tier.price}</span>
                       {tier.hostingLabel && (
-                        <div className="text-xs text-primary/60 font-mono mt-1">{tier.hostingLabel}</div>
+                        <div className="text-xs text-primary/60 font-mono mt-2">{tier.hostingLabel}</div>
                       )}
                     </div>
+
+                    <ul className="space-y-3 text-sm text-muted-foreground mb-8">
+                      {tier.features.map((f, j) => (
+                        <li key={j} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary-orange/50" /> {f}
+                        </li>
+                      ))}
+                      <li className={`flex items-center gap-2 ${tier.hosting ? 'text-primary/70 font-medium' : 'opacity-70 italic'}`}>
+                        <span className={`w-1.5 h-1.5 rounded-full ${tier.hosting ? 'bg-primary-orange' : 'bg-muted-foreground/50'}`} />
+                        Hosting {tier.hosting ? 'included' : 'not included'}
+                      </li>
+                    </ul>
                   </div>
-                  <ul className="space-y-2 text-sm text-muted-foreground mb-8">
-                    {tier.features.map((f, j) => (
-                      <li key={j}>• {f}</li>
-                    ))}
-                    <li className={tier.hosting ? 'text-primary/70 font-medium' : 'opacity-70 italic'}>
-                      • Hosting {tier.hosting ? 'included' : 'not included'}
-                    </li>
-                  </ul>
-                  <div onClick={() => handleApply(tier.name, tier.basePrice, tier.hostingLabel, tier.tierId)}>
+
+                  <div onClick={() => handleApply(tier.name, tier.basePrice, tier.hostingLabel, tier.tierId)} className="mt-auto">
                     <GradientButton className="w-full">Interested</GradientButton>
                   </div>
                 </motion.div>
@@ -154,45 +187,53 @@ const ForCreators = () => {
           </div>
         </AnimatedSection>
 
-        {/* Business Series Pricing */}
+        {/* Business Series Pricing - BENTO UI */}
         <AnimatedSection>
           <div className="mb-24">
-            <div className="text-center mb-10">
+            <div className="text-center mb-12">
               <h2 className="bracket-title mb-4">Business Series</h2>
               <p className="text-muted-foreground">Built for agencies, retailers, and service-based companies.</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
               {businessTiers.map((tier, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.4 }}
-                  className="glass-card glass-card-blue rounded-2xl p-8 group hover:border-[#0094ff]/30 transition-all"
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  className={`glass-card glass-card-blue rounded-3xl p-8 group hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(0,148,255,0.15)] transition-all duration-500 relative flex flex-col justify-between ${i === 3 ? 'lg:col-span-2 lg:row-span-2 bg-gradient-to-b from-background to-[#0094ff]/5' : ''}`}
                 >
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold">{tier.name}</h3>
+                  <div className="absolute inset-x-0 -top-px h-px w-full bg-gradient-to-r from-transparent via-[#0094ff]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  
+                  <div>
+                    <div className="flex flex-col mb-8">
+                      <h3 className={`font-bold mb-2 ${i === 3 ? 'text-3xl' : 'text-xl'}`}>{tier.name}</h3>
                       <p className="text-sm text-muted-foreground">{tier.desc}</p>
                     </div>
-                    <div className="text-right">
-                      <span className="text-xl font-bold text-gradient-blue font-mono">{tier.price}</span>
+                    
+                    <div className="mb-8">
+                      <span className={`font-bold text-gradient-blue font-mono ${i === 3 ? 'text-5xl' : 'text-3xl'}`}>{tier.price}</span>
                       {tier.hostingLabel && (
-                        <div className="text-xs text-[#0094ff]/60 font-mono mt-1">{tier.hostingLabel}</div>
+                        <div className="text-xs text-[#0094ff]/60 font-mono mt-2">{tier.hostingLabel}</div>
                       )}
                     </div>
+
+                    <ul className="space-y-3 text-sm text-muted-foreground mb-8">
+                      {tier.features.map((f, j) => (
+                        <li key={j} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#0094ff]/50" /> {f}
+                        </li>
+                      ))}
+                      <li className={`flex items-center gap-2 ${tier.hosting ? 'text-[#0094ff]/70 font-medium' : 'opacity-70 italic'}`}>
+                        <span className={`w-1.5 h-1.5 rounded-full ${tier.hosting ? 'bg-[#0094ff]' : 'bg-muted-foreground/50'}`} />
+                        Hosting {tier.hosting ? 'included' : 'not included'}
+                      </li>
+                    </ul>
                   </div>
-                  <ul className="space-y-2 text-sm text-muted-foreground mb-8">
-                    {tier.features.map((f, j) => (
-                      <li key={j}>• {f}</li>
-                    ))}
-                    <li className={tier.hosting ? 'text-[#0094ff]/70 font-medium' : 'opacity-70 italic'}>
-                      • Hosting {tier.hosting ? 'included' : 'not included'}
-                    </li>
-                  </ul>
-                  <div onClick={() => handleApply(tier.name, tier.basePrice, tier.hostingLabel, tier.tierId)}>
+
+                  <div onClick={() => handleApply(tier.name, tier.basePrice, tier.hostingLabel, tier.tierId)} className="mt-auto">
                     <GradientButton className="w-full">Interested</GradientButton>
                   </div>
                 </motion.div>

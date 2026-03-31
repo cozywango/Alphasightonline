@@ -39,46 +39,54 @@ const HunterProgram = () => {
                     </div>
                 </AnimatedSection>
 
-                {/* Why It Exists */}
+                {/* Why It Exists - BENTO UI */}
                 <AnimatedSection>
-                    <div className="mb-32 grid md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <span className="text-sm font-mono text-primary mb-4 block">WHY IT EXISTS</span>
-                            <h2 className="text-section mb-6">Visual Authority</h2>
-                            <div className="text-lg text-muted-foreground space-y-6">
-                                <p>
-                                    Alphasight Online translates complex technical work into authority-driven visuals.
-                                </p>
-                                <p>
-                                    To fund that work without compromising independence, we partner with trusted operators through the Hunter Program.
-                                </p>
-                                <p>
-                                    We apply the same psychological design principles used in deep-tech and biotech to creators, small businesses, and agencies.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="glass-card glow-orange rounded-3xl p-8">
-                            <h3 className="text-xl font-bold mb-6">The Objective</h3>
-                            <p className="text-muted-foreground mb-6">
-                                Identify people stuck in digital noise and upgrade their online presence to visual authority.
-                            </p>
-                            <div className="space-y-4">
-                                {[
-                                    'Creators with large audiences and weak websites',
-                                    'Small businesses relying on social platforms alone',
-                                    'Agencies needing fast, high-quality client assets',
-                                ].map((item, i) => (
-                                    <div key={i} className="flex items-start gap-3">
-                                        <CheckCircle2 className="text-primary mt-1 shrink-0" size={20} />
-                                        <p className="text-sm">{item}</p>
+                    <div className="mb-32">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                            <div className="lg:col-span-3 glass-card rounded-3xl p-10 group hover:scale-[1.01] transition-transform duration-500 relative overflow-hidden">
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary-orange/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <div className="absolute inset-x-0 -top-px h-px w-full bg-gradient-to-r from-transparent via-primary-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <div className="relative z-10">
+                                    <span className="text-sm font-mono text-primary mb-4 block">WHY IT EXISTS</span>
+                                    <h2 className="text-section mb-6">Visual Authority</h2>
+                                    <div className="text-lg text-muted-foreground space-y-6">
+                                        <p>
+                                            Alphasight Online translates complex technical work into authority-driven visuals.
+                                        </p>
+                                        <p>
+                                            To fund that work without compromising independence, we partner with trusted operators through the Hunter Program.
+                                        </p>
+                                        <p>
+                                            We apply the same psychological design principles used in deep-tech and biotech to creators, small businesses, and agencies.
+                                        </p>
                                     </div>
-                                ))}
+                                </div>
+                            </div>
+                            
+                            <div className="lg:col-span-2 glass-card glow-orange rounded-3xl p-10 group hover:-translate-y-1 transition-transform duration-500 relative flex flex-col justify-center">
+                                <div className="absolute inset-x-0 -top-px h-px w-full bg-gradient-to-r from-transparent via-primary-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <h3 className="text-xl font-bold mb-6 relative z-10">The Objective</h3>
+                                <p className="text-muted-foreground mb-6 relative z-10">
+                                    Identify people stuck in digital noise and upgrade their online presence to visual authority.
+                                </p>
+                                <div className="space-y-4 relative z-10">
+                                    {[
+                                        'Creators with large audiences and weak websites',
+                                        'Small businesses relying on social platforms alone',
+                                        'Agencies needing fast, high-quality client assets',
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex items-start gap-3">
+                                            <CheckCircle2 className="text-primary mt-1 shrink-0" size={20} />
+                                            <p className="text-sm">{item}</p>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </AnimatedSection>
 
-                {/* The Asset */}
+                {/* The Asset - BENTO UI */}
                 <AnimatedSection>
                     <div className="mb-32">
                         <div className="text-center mb-16">
@@ -89,23 +97,23 @@ const HunterProgram = () => {
                             </p>
                         </div>
 
-                        <div className="grid lg:grid-cols-2 gap-16 items-center">
-                            <div className="space-y-8">
-                                <div className="glass-card rounded-2xl p-8">
-                                    <h3 className="font-bold text-xl mb-4 text-red-400">The Problem</h3>
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div className="lg:col-span-1 space-y-6 flex flex-col">
+                                <div className="glass-card rounded-3xl p-8 flex-1 group hover:scale-[1.02] transition-transform duration-500 relative">
+                                    <h3 className="font-bold text-xl mb-4 text-red-500">The Problem</h3>
                                     <p className="text-muted-foreground mb-4">Most personal and business sites fail because they are:</p>
-                                    <ul className="grid grid-cols-2 gap-4">
+                                    <ul className="space-y-3">
                                         {['Slow', 'Overbuilt', 'Template-driven', 'Hard to maintain'].map((item, i) => (
                                             <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-red-400" />{item}
+                                                <div className="w-1.5 h-1.5 rounded-full bg-red-500/80" />{item}
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
-                                <div className="glass-card glow-orange rounded-2xl p-8">
+                                <div className="glass-card glow-orange rounded-3xl p-8 flex-1 group hover:scale-[1.02] transition-transform duration-500 relative">
                                     <h3 className="font-bold text-xl mb-4 text-primary">The Solution</h3>
                                     <p className="text-muted-foreground mb-4">Catalog-Mode sites are:</p>
-                                    <ul className="grid grid-cols-2 gap-4">
+                                    <ul className="space-y-3">
                                         {['Fast-loading', 'Mobile-first', 'Zero-friction', 'Permanent real estate'].map((item, i) => (
                                             <li key={i} className="flex items-center gap-2 text-sm">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-primary" />{item}
@@ -115,27 +123,28 @@ const HunterProgram = () => {
                                 </div>
                             </div>
 
-                            <div>
-                                <h3 className="text-2xl font-bold mb-8">What Makes Them Different</h3>
-                                <div className="space-y-6">
+                            <div className="lg:col-span-2 glass-card rounded-3xl p-10 flex flex-col justify-center relative overflow-hidden group hover:scale-[1.01] transition-transform duration-500">
+                                <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-primary-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <h3 className="text-2xl font-bold mb-10 relative z-10">What Makes Them Different</h3>
+                                <div className="grid sm:grid-cols-2 gap-8 relative z-10">
                                     {[
                                         { title: 'Speed', desc: 'Delivered in days, not months' },
                                         { title: 'Polish', desc: 'Enterprise-grade design without artificial artifacts' },
                                         { title: 'Simplicity', desc: 'Frontend-only architecture. No plugins. No maintenance' }
                                     ].map((item, i) => (
-                                        <div key={i} className="flex gap-4">
-                                            <div className="glow-badge w-12 h-12 shrink-0">
-                                                <CheckCircle2 size={24} />
+                                        <div key={i} className="flex flex-col gap-3">
+                                            <div className="glow-badge w-10 h-10 shrink-0 flex items-center justify-center">
+                                                <CheckCircle2 size={20} />
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-lg">{item.title}</h4>
-                                                <p className="text-muted-foreground">{item.desc}</p>
+                                                <h4 className="font-bold text-lg mb-1">{item.title}</h4>
+                                                <p className="text-sm text-muted-foreground">{item.desc}</p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
-                                <div className="mt-8 glass-card rounded-2xl p-6 border-l-4 border-primary" style={{ boxShadow: '-2px 0 12px rgba(255,138,0,0.1), 0 8px 32px rgba(0,0,0,0.4)' }}>
-                                    <p className="text-xl font-medium italic">
+                                <div className="mt-10 glass-card rounded-2xl p-6 border-l-4 border-primary bg-background/50 relative z-10">
+                                    <p className="text-xl font-medium italic text-foreground/90">
                                         "Do not post content endlessly. Publish a destination."
                                     </p>
                                 </div>
@@ -203,7 +212,7 @@ const HunterProgram = () => {
                     </div>
                 </AnimatedSection>
 
-                {/* Product Inventory */}
+                {/* Product Inventory - BENTO UI */}
                 <AnimatedSection>
                     <div className="mb-32">
                         <div className="text-center mb-16">
@@ -214,46 +223,44 @@ const HunterProgram = () => {
                             </p>
                         </div>
 
-                        <div className="grid lg:grid-cols-2 gap-12">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                             {/* Creator Series */}
-                            <div className="glass-card rounded-3xl p-8">
-                                <h3 className="text-2xl font-bold mb-2">Creator Series</h3>
-                                <p className="text-sm text-muted-foreground italic mb-8">Built for creators, artists, and personal brands.</p>
-                                <div className="space-y-6">
+                            <div className="glass-card rounded-3xl p-10 group hover:-translate-y-1 transition-transform duration-500 relative">
+                                <div className="absolute inset-x-0 -top-px h-px w-full bg-gradient-to-r from-transparent via-primary-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <h3 className="text-3xl font-bold mb-2">Creator Series</h3>
+                                <p className="text-sm text-muted-foreground italic mb-10">Built for creators, artists, and personal brands.</p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     {[
                                         { name: 'Bio Link', price: '$80 – $150', desc: 'A clean, professional digital card' },
                                         { name: 'Portfolio', price: '$170 – $270', desc: 'Work gallery with profile and CV' },
                                         { name: 'Content Hub', price: '$290 – $390', desc: 'Feeds and email capture' },
                                         { name: 'Icon', price: '$400+', desc: 'Flagship site with motion and custom domain' }
                                     ].map((item, i) => (
-                                        <div key={i} className="flex justify-between items-start pb-6 border-b border-white/[0.06] last:border-0 last:pb-0">
-                                            <div>
-                                                <div className="font-bold text-primary mb-1">{item.name}</div>
-                                                <div className="text-xs text-muted-foreground">{item.desc}</div>
-                                            </div>
-                                            <div className="font-mono font-bold text-right text-sm">{item.price}</div>
+                                        <div key={i} className="glass-card p-6 rounded-2xl hover:bg-white/[0.02] transition-colors duration-300">
+                                            <div className="font-bold text-primary mb-1 text-lg">{item.name}</div>
+                                            <div className="font-mono font-bold text-gradient-orange mb-3">{item.price}</div>
+                                            <div className="text-sm text-muted-foreground">{item.desc}</div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
                             {/* Business Series */}
-                            <div className="glass-card glass-card-blue rounded-3xl p-8">
-                                <h3 className="text-2xl font-bold mb-2">Business Series</h3>
-                                <p className="text-sm text-muted-foreground italic mb-8">Built for agencies, retailers, and service businesses.</p>
-                                <div className="space-y-6">
+                            <div className="glass-card glass-card-blue rounded-3xl p-10 group hover:-translate-y-1 transition-transform duration-500 relative">
+                                <div className="absolute inset-x-0 -top-px h-px w-full bg-gradient-to-r from-transparent via-[#0094ff]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                <h3 className="text-3xl font-bold mb-2">Business Series</h3>
+                                <p className="text-sm text-muted-foreground italic mb-10">Built for agencies, retailers, and service businesses.</p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     {[
                                         { name: 'The Card', price: '$120 – $220', desc: 'Single-page site with WhatsApp contact' },
                                         { name: 'The Catalog', price: '$250 – $350', desc: 'Product galleries with direct messaging sales' },
                                         { name: 'The Firm', price: '$380 – $480', desc: 'Services, menus, and booking integration' },
                                         { name: 'Enterprise Lite', price: '$800+', desc: 'Multi-page site with competitor review' }
                                     ].map((item, i) => (
-                                        <div key={i} className="flex justify-between items-start pb-6 border-b border-white/[0.06] last:border-0 last:pb-0">
-                                            <div>
-                                                <div className="font-bold text-[#0094ff] mb-1">{item.name}</div>
-                                                <div className="text-xs text-muted-foreground">{item.desc}</div>
-                                            </div>
-                                            <div className="font-mono font-bold text-right text-sm">{item.price}</div>
+                                        <div key={i} className="glass-card p-6 rounded-2xl hover:bg-white/[0.02] transition-colors duration-300">
+                                            <div className="font-bold text-[#0094ff] mb-1 text-lg">{item.name}</div>
+                                            <div className="font-mono font-bold text-gradient-blue mb-3">{item.price}</div>
+                                            <div className="text-sm text-muted-foreground">{item.desc}</div>
                                         </div>
                                     ))}
                                 </div>
