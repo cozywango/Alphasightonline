@@ -14,6 +14,8 @@ gsap.registerPlugin(ScrollTrigger);
 const Index = () => {
   const stackContainerRef = useRef<HTMLDivElement>(null);
   const stackCardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const howItWorksRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -44,13 +46,32 @@ const Index = () => {
           });
         }
       });
-    }, stackContainerRef);
+
+      // How It Works Parallax Note: target via class within rootRef
+      const parallaxCards = gsap.utils.toArray('.parallax-card');
+      parallaxCards.forEach((card: any) => {
+        const speed = parseFloat(card.getAttribute('data-speed') || '1');
+        gsap.fromTo(card, 
+          { y: 80 * speed },
+          {
+            y: -120 * speed,
+            ease: "none",
+            scrollTrigger: {
+              trigger: howItWorksRef.current,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            }
+          }
+        );
+      });
+    }, rootRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div className="bg-background overflow-visible font-sans selection:bg-primary-orange/30">
+    <div ref={rootRef} className="bg-background overflow-visible font-sans selection:bg-primary-orange/30">
       {/* SECTION 2 — HERO */}
       <section className="relative h-[1000px] w-full overflow-hidden bg-background">
         <div className="absolute inset-0 z-0">
@@ -118,36 +139,43 @@ const Index = () => {
       </section>
 
       {/* SECTION 4 — HOW IT WORKS */}
-      <section className="relative min-h-[800px] py-32 px-6 md:px-16 lg:px-24 flex items-center overflow-hidden">
+      <section ref={howItWorksRef} className="relative min-h-[800px] py-32 w-full max-w-[100vw] overflow-hidden grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-background">
         <HLSVideo src="https://stream.mux.com/9JXDljEVWYwWu01PUkAemafDugK89o01BR6zqJ3aS9u00A.m3u8" fadeTop fadeBottom className="absolute inset-0 z-0" />
-        <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center w-full max-w-7xl mx-auto">
-          <div className="hidden lg:block">
-            <div className="grid grid-cols-2 gap-4 h-full">
-              <div className="cyber-glass rounded-2xl overflow-hidden group col-span-1 row-span-2 relative h-[500px]">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" alt="Technical Vision" className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
-              </div>
-              <div className="cyber-glass rounded-2xl overflow-hidden group col-span-1 h-[240px] relative">
+        
+        {/* Atmospheric Left-Side Background */}
+        <div className="absolute inset-y-0 left-0 w-full md:w-7/12 z-[1] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
+        <div className="absolute inset-y-0 left-0 w-full md:w-7/12 z-[1] bg-gradient-to-br from-primary-blue/5 via-background to-primary-orange/5 pointer-events-none"></div>
+
+        <div className="relative z-10 md:col-start-2 md:col-end-8 hidden lg:flex items-center justify-center h-full">
+          <div className="grid grid-cols-2 gap-6 w-full max-w-2xl relative">
+            <div className="parallax-card cyber-glass rounded-2xl overflow-hidden group col-span-1 row-span-2 relative h-[500px] z-10 self-center" data-speed="0.7">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" alt="Technical Vision" className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+            </div>
+            
+            <div className="flex flex-col gap-6 justify-center">
+              <div className="parallax-card cyber-glass rounded-2xl overflow-hidden group h-[240px] relative z-10" data-speed="1.1">
                 <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80&w=1000" alt="Design Architecture" className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
               </div>
-              <div className="cyber-glass rounded-2xl overflow-hidden group col-span-1 h-[240px] relative mt-auto">
+              <div className="parallax-card cyber-glass rounded-2xl overflow-hidden group h-[240px] relative z-10" data-speed="1.4">
                 <img src="https://images.unsplash.com/photo-1531297172867-6cd85f470a7b?auto=format&fit=crop&q=80&w=1000" alt="Code Implementation" className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
               </div>
             </div>
           </div>
-          <div className="text-left">
-            <div className="cyber-glass px-3.5 py-1 text-xs font-medium text-white inline-block mb-4">How It Works</div>
-            <h2 className="text-4xl md:text-5xl font-medium text-white mb-6 tracking-tight">You dream it. We engineer it.</h2>
-            <p className="text-white/70 font-light text-lg mb-10 max-w-xl leading-relaxed">
-              Share your vision. Our team handles the rest—architecture, design, code, launch. All in days, not quarters.
-            </p>
-            <Link to="/contact" className="cyber-glass-strong px-8 py-3 text-white font-medium flex items-center gap-2 group hover:border-primary-orange/50 transition-all w-fit">
-              Secure Your Spot
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
-          </div>
+        </div>
+
+        <div className="relative z-10 md:col-start-8 md:col-end-12 px-6 md:px-0 text-left">
+          <div className="cyber-glass px-3.5 py-1 text-xs font-medium text-white inline-block mb-4">How It Works</div>
+          <h2 className="text-4xl md:text-5xl font-medium text-white mb-6 tracking-tight">You dream it. We engineer it.</h2>
+          <p className="text-white/70 font-light text-lg mb-10 max-w-xl leading-relaxed">
+            Share your vision. Our team handles the rest—architecture, design, code, launch. All in days, not quarters.
+          </p>
+          <Link to="/contact" className="cyber-glass-strong px-8 py-3 text-white font-medium flex items-center gap-2 group hover:border-primary-orange/50 transition-all w-fit">
+            Secure Your Spot
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
         </div>
       </section>
 
