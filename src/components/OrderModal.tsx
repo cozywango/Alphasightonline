@@ -139,7 +139,7 @@ const OrderModal = ({ tierName, basePrice, hostingLabel, tierId, isOpen, onOpenC
             `Est. Total: ${fmt(total)}\n` +
             (form.brief ? `\nProject Brief:\n${form.brief}` : ''),
         );
-        window.location.href = `mailto:hello@alphasightonline.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:joel@alphasight.online?subject=${subject}&body=${body}`;
     };
 
     /* Reset state when modal closes */

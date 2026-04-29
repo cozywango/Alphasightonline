@@ -23,9 +23,9 @@ const ForCreators = () => {
 
   const businessTiers = [
     { name: 'Tier One. The Card', desc: 'Single landing page', price: '$300', basePrice: 300, tierId: 'the-card', features: ['Business details and map', 'WhatsApp contact button', 'Hero image'], hosting: false, hostingLabel: '', product: 'Business Tier 1' },
-    { name: 'Tier Two. The Catalog', desc: 'Product gallery up to twenty items', price: '$1,800', basePrice: 1800, tierId: 'the-catalog', features: ['Categorized layouts', 'Product detail pop-ups', 'Direct-to-message buttons'], hosting: false, hostingLabel: '', product: 'Business Tier 2' },
-    { name: 'Tier Three. The Firm', desc: 'Service menus and pricing', price: '$2,400', basePrice: 2400, tierId: 'the-firm', features: ['Team profiles & Client testimonials', 'Booking link integration', 'Mobile and desktop optimized'], hosting: true, hostingLabel: '', product: 'Business Tier 3' },
-    { name: 'Tier Four. Enterprise Lite', desc: 'Multi-page structure', price: '$4,500', basePrice: 4500, tierId: 'enterprise-lite', features: ['Advanced motion visuals', 'Case studies', 'Competitor visual audit'], hosting: true, hostingLabel: '', product: 'Business Tier 4' },
+    { name: 'Tier Two. The Catalog', desc: 'Product gallery up to twenty items', price: '$800', basePrice: 800, tierId: 'the-catalog', features: ['Categorized layouts', 'Product detail pop-ups', 'Direct-to-message buttons'], hosting: false, hostingLabel: '', product: 'Business Tier 2' },
+    { name: 'Tier Three. The Firm', desc: 'Service menus and pricing', price: '$1,500', basePrice: 1500, tierId: 'the-firm', features: ['Team profiles & Client testimonials', 'Booking link integration', 'Mobile and desktop optimized'], hosting: true, hostingLabel: '', product: 'Business Tier 3' },
+    { name: 'Tier Four. Enterprise Lite', desc: 'Multi-page structure', price: '$2,200', basePrice: 2200, tierId: 'enterprise-lite', features: ['Advanced motion visuals', 'Case studies', 'Competitor visual audit'], hosting: true, hostingLabel: '', product: 'Business Tier 4' },
   ];
 
   return (
@@ -148,18 +148,18 @@ const ForCreators = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className={`glass-card rounded-3xl p-8 group hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(255,138,0,0.15)] transition-all duration-500 relative flex flex-col justify-between ${i === 3 ? 'lg:col-span-2 lg:row-span-2 bg-gradient-to-b from-background to-primary-orange/5' : ''}`}
+                  className="glass-card rounded-3xl p-8 group hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(255,138,0,0.15)] transition-all duration-500 relative flex flex-col justify-between"
                 >
                   <div className="absolute inset-x-0 -top-px h-px w-full bg-gradient-to-r from-transparent via-primary-orange/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   
                   <div>
                     <div className="flex flex-col mb-8">
-                      <h3 className={`font-bold mb-2 ${i === 3 ? 'text-3xl' : 'text-xl'}`}>{tier.name}</h3>
+                      <h3 className="font-bold mb-2 text-xl">{tier.name}</h3>
                       <p className="text-sm text-muted-foreground">{tier.desc}</p>
                     </div>
                     
                     <div className="mb-8">
-                      <span className={`font-bold text-gradient-orange font-mono ${i === 3 ? 'text-5xl' : 'text-3xl'}`}>{tier.price}</span>
+                      <span className="font-bold text-gradient-orange font-mono text-3xl">{tier.price}</span>
                       {tier.hostingLabel && (
                         <div className="text-xs text-primary/60 font-mono mt-2">{tier.hostingLabel}</div>
                       )}
@@ -203,18 +203,18 @@ const ForCreators = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className={`glass-card glass-card-blue rounded-3xl p-8 group hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(0,148,255,0.15)] transition-all duration-500 relative flex flex-col justify-between ${i === 3 ? 'lg:col-span-2 lg:row-span-2 bg-gradient-to-b from-background to-[#0094ff]/5' : ''}`}
+                  className="glass-card glass-card-blue rounded-3xl p-8 group hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(0,148,255,0.15)] transition-all duration-500 relative flex flex-col justify-between"
                 >
                   <div className="absolute inset-x-0 -top-px h-px w-full bg-gradient-to-r from-transparent via-[#0094ff]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   
                   <div>
                     <div className="flex flex-col mb-8">
-                      <h3 className={`font-bold mb-2 ${i === 3 ? 'text-3xl' : 'text-xl'}`}>{tier.name}</h3>
+                      <h3 className="font-bold mb-2 text-xl">{tier.name}</h3>
                       <p className="text-sm text-muted-foreground">{tier.desc}</p>
                     </div>
                     
                     <div className="mb-8">
-                      <span className={`font-bold text-gradient-blue font-mono ${i === 3 ? 'text-5xl' : 'text-3xl'}`}>{tier.price}</span>
+                      <span className="font-bold text-gradient-blue font-mono text-3xl">{tier.price}</span>
                       {tier.hostingLabel && (
                         <div className="text-xs text-[#0094ff]/60 font-mono mt-2">{tier.hostingLabel}</div>
                       )}
